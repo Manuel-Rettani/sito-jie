@@ -1,0 +1,109 @@
+{
+  "meta": { "htmlLang": "it" },
+  "nav": {
+    "destinations": "Destinazioni",
+    "experience": "Esperienza",
+    "packages": "Pacchetti",
+    "contact": "Contatti"
+  },
+  "hero": {
+    "eyebrow": "ITALY · GOLF CONCIERGE",
+    "title": "Il golf incontra il lusso italiano",
+    "subtitle": "Campi leggendari, dimore esclusive, esperienze su misura per il viaggiatore esigente.",
+    "cta": "Scopri le destinazioni",
+    "scroll": "SCORRI"
+  },
+  "map": {
+    "title": "Le nostre destinazioni",
+    "lead": "Esplora l'Italia del golf. Passa sulla mappa e seleziona la Toscana per scoprire i nostri itinerari.",
+    "regions": {
+      "valledaosta": "Valle d'Aosta",
+      "piemonte": "Piemonte",
+      "lombardia": "Lombardia",
+      "trentino-altoadige": "Trentino-Alto Adige",
+      "veneto": "Veneto",
+      "friuli-venezia-giulia": "Friuli-Venezia Giulia",
+      "liguria": "Liguria",
+      "emilia-romagna": "Emilia-Romagna",
+      "toscana": "Toscana",
+      "umbria": "Umbria",
+      "marche": "Marche",
+      "lazio": "Lazio",
+      "abruzzo": "Abruzzo",
+      "molise": "Molise",
+      "campania": "Campania",
+      "puglia": "Puglia",
+      "basilicata": "Basilicata",
+      "calabria": "Calabria",
+      "sardegna": "Sardegna",
+      "sicilia": "Sicilia"
+    },
+    "panel": {
+      "hint": "Passa sulla mappa per esplorare. Clicca la Toscana per iniziare.",
+      "comingSoon": "Presto disponibile",
+      "back": "Indietro",
+      "toscanaTitle": "Toscana",
+      "toscanaText": "Colline, vigneti e green leggendari. Golf championship e soggiorni in villa tra Firenze, Chianti e la costa.",
+      "toscanaCta": "Esplora la Toscana"
+    }
+  },
+  "guar": {
+    "items": {
+      "tee": { "title": "Tee Time Garantito", "text": "Prenotiamo noi al club" },
+      "price": { "title": "Best Price & No Fees", "text": "Nessuna commissione nascosta" },
+      "concierge": { "title": "Personal Concierge", "text": "Un esperto sempre a tua disposizione" },
+      "exp": { "title": "Esperienze Esclusive", "text": "Cantine, castelli e itinerari su misura" }
+    }
+  },
+  "exp": {
+    "title": "Un'esperienza senza compromessi",
+    "items": {
+      "golf": {
+        "title": "Campi da golf d'eccellenza",
+        "text": "Accesso ai green più prestigiosi d'Italia, tee time riservati e maestri dedicati."
+      },
+      "stay": {
+        "title": "Dimore di lusso",
+        "text": "Ville storiche, relais e resort 5 stelle selezionati per fascino e privacy."
+      },
+      "concierge": {
+        "title": "Concierge dedicato",
+        "text": "Assistenza in lingua cinese, trasferimenti privati e itinerari su misura."
+      },
+      "taste": {
+        "title": "Gusto & territorio",
+        "text": "Degustazioni di vini pregiati, cene stellate e visite esclusive alle cantine."
+      }
+    }
+  },
+  "pkg": {
+    "title": "Pacchetti su misura",
+    "lead": "Itinerari curati nei minimi dettagli. Ogni viaggio è personalizzabile.",
+    "items": {
+      "tuscany": {
+        "title": "Toscana Golf & Ville",
+        "text": "5 notti tra Firenze e Chianti, due campi championship, soggiorno in villa con cantina privata."
+      },
+      "more": {
+        "title": "Nuove destinazioni",
+        "text": "Stiamo selezionando nuove regioni e percorsi esclusivi. Resta aggiornato."
+      }
+    },
+    "badge": {
+      "signature": "SIGNATURE",
+      "soon": "IN ARRIVO"
+    },
+    "soon": {
+      "region": "Prossimamente"
+    }
+  },
+  "contact": {
+    "title": "Parla con noi",
+    "lead": "Il tuo viaggio inizia da una conversazione. Scansiona il QR per scriverci su WeChat.",
+    "wechat": "WeChat · 微信",
+    "emailLabel": "Email",
+    "areaLabel": "Area",
+    "areaValue": "Italia · Toscana e oltre",
+    "note": "Risposta in lingua italiana e cinese."
+  }
+}

@@ -1,0 +1,458 @@
+/* =====================================================================
+   Yi Gao Fei — Italy Golf Concierge
+   style.css  ·  Mobile-first, responsive, no framework
+   Palette ispirata al logo: verde bosco, oro, avorio.
+   ===================================================================== */
+
+/* ---------------------- Variabili / Tokens ---------------------- */
+:root {
+  --green-900: #0f3324;   /* verde profondo (testi/sfondi scuri) */
+  --green-700: #16492f;   /* verde brand principale */
+  --green-500: #2f6b48;   /* verde medio */
+  --gold:      #b8924a;   /* oro brand */
+  --gold-soft: #cda869;
+  --ivory:     #f6f1e7;   /* avorio sfondo */
+  --cream:     #fbf8f2;
+  --ink:       #1c2a22;   /* testo scuro */
+  --muted:     #6f7b72;   /* testo attenuato */
+  --line:      rgba(22, 73, 47, 0.16);
+  --it-red:    #b1463b;
+
+  --serif: "Cormorant Garamond", "Noto Serif SC", Georgia, serif;
+  --sans:  "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+
+  --maxw: 1180px;
+  --pad: 22px;
+  --radius: 4px;
+  --header-h: 68px;
+}
+
+/* ---------------------- Reset di base ---------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.15; }
+p { margin: 0; }
+
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+
+/* ---------------------- Bottoni ---------------------- */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn-gold { background: var(--gold); color: #fff; }
+.btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  border-color: var(--green-700);
+  color: var(--green-700);
+}
+.btn-outline:hover { background: var(--green-700); color: #fff; }
+
+/* ============================= HEADER ============================= */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+}
+/* Sfondo/blur su uno strato dedicato: NON applichiamo backdrop-filter
+   direttamente all'header, altrimenti creerebbe un containing-block che
+   "ritaglia" il menu mobile (position:fixed) quando si scorre la pagina. */
+.site-header::before {
+  content: "";
+  position: absolute; inset: 0;
+  z-index: -1;
+  background: rgba(251, 248, 242, 0);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.site-header.is-scrolled::before {
+  background: rgba(251, 248, 242, 0.96);
+  box-shadow: 0 1px 0 var(--line);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+}
+.brand-logo {
+  height: 42px;
+  width: auto;
+  /* il logo ha sfondo bianco: piccola cornice morbida quando trasparente */
+  background: rgba(255,255,255,0.85);
+  padding: 4px 8px;
+  border-radius: var(--radius);
+}
+.is-scrolled .brand-logo { background: transparent; padding: 0; }
+
+/* Navigazione desktop */
+.main-nav { display: flex; align-items: center; gap: 28px; }
+.main-nav > a {
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  padding: 6px 0;
+  position: relative;
+}
+.main-nav > a::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 0; height: 1px; background: var(--gold);
+  transition: width 0.25s ease;
+}
+.main-nav > a:hover::after { width: 100%; }
+.is-scrolled .main-nav > a { color: var(--green-900); }
+
+/* Selettore lingua */
+.lang-switch {
+  display: flex; align-items: center; gap: 6px;
+  padding-left: 22px; margin-left: 4px;
+  border-left: 1px solid rgba(255,255,255,0.35);
+}
+.is-scrolled .lang-switch { border-left-color: var(--line); }
+.lang-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.06em;
+  color: var(--ivory); opacity: 0.7; padding: 2px 4px; transition: opacity 0.2s;
+}
+.is-scrolled .lang-btn { color: var(--green-900); }
+.lang-btn:hover { opacity: 1; }
+.lang-btn.is-active { opacity: 1; color: var(--gold); font-weight: 700; }
+.lang-sep { color: rgba(255,255,255,0.5); }
+.is-scrolled .lang-sep { color: var(--line); }
+
+/* Hamburger (mobile) */
+.nav-toggle {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  width: 42px; height: 42px; background: none; border: none; cursor: pointer; padding: 8px;
+}
+.nav-toggle span {
+  display: block; height: 2px; width: 100%; background: var(--ivory);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.is-scrolled .nav-toggle span { background: var(--green-900); }
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================= HERO ============================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: var(--ivory);
+  background:
+    linear-gradient(160deg, rgba(15,51,36,0.55), rgba(15,51,36,0.78)),
+    radial-gradient(120% 90% at 70% 20%, #2f6b48 0%, #123a28 60%, #0c2c1d 100%);
+  text-align: center;
+  overflow: hidden;
+}
+/* texture sottile a punti dorati */
+.hero-overlay {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(184,146,74,0.18) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 2; padding-top: var(--header-h); }
+.eyebrow {
+  font-size: 0.8rem; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--gold-soft); margin-bottom: 22px;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 8vw, 4.8rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  max-width: 16ch; margin: 0 auto 22px;
+}
+.hero-sub {
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
+  color: rgba(246,241,231,0.85);
+  max-width: 38ch; margin: 0 auto 38px; font-weight: 300;
+}
+.scroll-hint {
+  position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
+  font-size: 0.68rem; letter-spacing: 0.28em; color: rgba(246,241,231,0.7);
+}
+.scroll-line { width: 1px; height: 46px; background: linear-gradient(var(--gold), transparent); }
+
+/* ============================= SEZIONI ============================= */
+.section { padding: 84px 0; }
+.section-index {
+  font-size: 0.78rem; letter-spacing: 0.3em; color: var(--gold);
+  text-align: center; margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  text-align: center; color: var(--green-900); margin-bottom: 16px;
+}
+.section-lead {
+  text-align: center; color: var(--muted); max-width: 52ch;
+  margin: 0 auto 52px; font-weight: 300; font-size: 1.05rem;
+}
+
+/* ---------------------- Mappa ---------------------- */
+/* ---------------------- Garanzie (info generali) ---------------------- */
+.guarantees {
+  background: var(--green-900);
+  border-top: 1px solid rgba(246,241,231,0.1);
+  border-bottom: 1px solid rgba(246,241,231,0.1);
+  padding: 54px 0;
+}
+.guarantees-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 38px 20px;
+}
+.guarantee { text-align: center; color: var(--ivory); }
+.guarantee-ico {
+  width: 38px; height: 38px; margin: 0 auto 16px;
+  fill: none; stroke: var(--gold); stroke-width: 1.4;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.guarantee h3 {
+  font-family: var(--serif); font-size: 1.2rem; font-weight: 600;
+  color: var(--gold-soft); margin-bottom: 8px;
+}
+.guarantee p { color: rgba(246,241,231,0.72); font-weight: 300; font-size: 0.92rem; }
+
+.section-map { background: var(--ivory); }
+.map-wrapper {
+  display: flex; flex-direction: column; align-items: center; gap: 36px;
+}
+.map-stage { width: 100%; display: flex; justify-content: center; }
+.italy-map {
+  width: 100%; max-width: 360px; height: auto;
+  filter: drop-shadow(0 16px 32px rgba(15,51,36,0.16));
+  overflow: visible;
+}
+.region {
+  stroke: #fff;
+  stroke-width: 0.8;
+  transition: filter 0.2s ease, stroke 0.2s ease, stroke-width 0.2s ease;
+}
+.region--inactive { cursor: default; }
+.region--active { cursor: pointer; }
+/* hover su qualsiasi regione: leggermente piu' intensa + bordo */
+.region.is-hover { filter: brightness(0.93); stroke: #fff; stroke-width: 1.2; }
+/* regione attiva (Toscana): bordo dorato a riposo, piena su hover/selezione */
+.region--active { stroke: var(--gold); stroke-width: 1.4; }
+.region--active.is-hover,
+.region--active.is-selected { fill: var(--gold) !important; filter: none; }
+.region--active:focus { outline: none; }
+.region--active:focus-visible { fill: var(--gold) !important; }
+
+.region-pin circle { fill: var(--green-900); }
+.region-pin-ring {
+  fill: none; stroke: var(--green-900); stroke-width: 2; opacity: 0.6;
+  animation: pulse 2.2s ease-out infinite;
+  transform-box: fill-box; transform-origin: center;
+}
+@keyframes pulse {
+  0%   { transform: scale(0.5); opacity: 0.7; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+/* Etichette regioni: discrete; quelle piccole si nascondono su mobile */
+.region-label {
+  font-family: var(--sans);
+  font-size: 9px; font-weight: 500; fill: #44544a;
+  letter-spacing: 0.01em;
+  paint-order: stroke; stroke: rgba(255,255,255,0.7); stroke-width: 2px;
+}
+.region-label--active { fill: var(--green-900); font-weight: 700; font-family: var(--serif); font-size: 11px; }
+
+/* Pannello informativo mappa */
+.map-panel {
+  width: 100%; max-width: 440px;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 30px; text-align: center; min-height: 140px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  position: relative;
+}
+.map-panel-hint { color: var(--muted); font-style: italic; }
+.map-panel-back {
+  position: absolute; top: 14px; left: 16px;
+  background: none; border: none; cursor: pointer;
+  font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.08em;
+  color: var(--muted); padding: 4px 6px; transition: color 0.2s;
+}
+.map-panel-back:hover { color: var(--green-700); }
+.map-panel-tag {
+  font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px;
+}
+.map-panel-title {
+  font-family: var(--serif); font-size: 1.8rem; color: var(--green-900); margin-bottom: 12px;
+}
+.map-panel-text { color: var(--muted); margin-bottom: 22px; }
+
+/* ---------------------- Esperienza ---------------------- */
+.section-exp { background: var(--green-900); color: var(--ivory); }
+.section-exp .section-title { color: var(--ivory); }
+.section-exp .section-lead { color: rgba(246,241,231,0.7); }
+.exp-grid {
+  display: grid; grid-template-columns: 1fr; gap: 1px;
+  background: rgba(246,241,231,0.14);
+  border: 1px solid rgba(246,241,231,0.14);
+}
+.exp-card {
+  background: var(--green-900); padding: 38px 30px;
+  transition: background 0.3s ease;
+}
+.exp-card:hover { background: var(--green-700); }
+.exp-num {
+  font-family: var(--serif); font-size: 1.1rem; color: var(--gold);
+  display: block; margin-bottom: 18px; letter-spacing: 0.1em;
+}
+.exp-card h3 {
+  font-family: var(--serif); font-size: 1.45rem; margin-bottom: 12px; font-weight: 600;
+}
+.exp-card p { color: rgba(246,241,231,0.72); font-weight: 300; font-size: 0.98rem; }
+
+/* ---------------------- Pacchetti ---------------------- */
+.section-packages { background: var(--cream); }
+.pkg-grid {
+  display: grid; grid-template-columns: 1fr; gap: 26px; max-width: 880px; margin: 0 auto;
+}
+.pkg-card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+.pkg-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(15,51,36,0.12); }
+.pkg-card::before {
+  content: ""; display: block; height: 6px;
+  background: linear-gradient(90deg, var(--green-700), var(--gold));
+}
+.pkg-card--soon { opacity: 0.85; }
+.pkg-card--soon::before { background: var(--line); }
+.pkg-card-body { padding: 32px; }
+.pkg-region {
+  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px;
+}
+.pkg-card h3 { font-family: var(--serif); font-size: 1.6rem; color: var(--green-900); margin-bottom: 14px; }
+.pkg-card p { color: var(--muted); font-weight: 300; margin-bottom: 22px; }
+.pkg-tag {
+  display: inline-block; font-size: 0.68rem; letter-spacing: 0.18em;
+  padding: 6px 14px; border: 1px solid var(--gold); color: var(--gold); border-radius: 2px;
+}
+.pkg-tag--muted { border-color: var(--muted); color: var(--muted); }
+
+/* ---------------------- Contatti ---------------------- */
+.section-contact { background: var(--green-900); color: var(--ivory); }
+.section-contact .section-title { color: var(--ivory); }
+.section-contact .section-lead { color: rgba(246,241,231,0.72); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr; gap: 40px;
+  align-items: center; justify-items: center; max-width: 820px; margin: 0 auto;
+}
+.contact-qr { text-align: center; }
+.qr-frame {
+  background: #fff; padding: 16px; border-radius: var(--radius);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  width: 220px; height: 220px; display: flex; align-items: center; justify-content: center;
+}
+.qr-img { width: 100%; height: 100%; object-fit: contain; }
+.qr-caption { margin-top: 16px; letter-spacing: 0.14em; color: var(--gold-soft); font-size: 0.9rem; }
+.contact-info { text-align: center; }
+.contact-label {
+  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); margin-top: 18px; margin-bottom: 4px;
+}
+.contact-label:first-child { margin-top: 0; }
+.contact-value { font-family: var(--serif); font-size: 1.3rem; }
+.contact-value a { transition: color 0.2s; }
+.contact-value a:hover { color: var(--gold); }
+.contact-note { margin-top: 26px; color: rgba(246,241,231,0.6); font-size: 0.9rem; font-weight: 300; }
+
+/* ---------------------- Footer ---------------------- */
+.site-footer { background: var(--green-900); border-top: 1px solid rgba(246,241,231,0.12); padding: 34px 0; }
+.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.footer-logo { height: 48px; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: var(--radius); }
+.footer-copy { color: rgba(246,241,231,0.55); font-size: 0.82rem; letter-spacing: 0.04em; }
+
+/* =====================================================================
+   RESPONSIVE — Tablet / Desktop
+   ===================================================================== */
+/* Su schermi stretti la mappa e' piccola: mostriamo solo l'etichetta della
+   regione attiva (Toscana) per evitare sovrapposizioni; le altre compaiono
+   comunque nel pannello al tocco/hover. */
+@media (max-width: 719px) {
+  .region-label:not(.region-label--active) { display: none; }
+}
+
+@media (min-width: 720px) {
+  .guarantees-grid { grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .exp-grid { grid-template-columns: repeat(2, 1fr); }
+  .pkg-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: auto 1fr; gap: 60px; }
+  .contact-info { text-align: left; }
+  .map-wrapper { flex-direction: row; align-items: center; justify-content: center; gap: 56px; }
+  .italy-map { max-width: 400px; }
+  .footer-inner { flex-direction: row; justify-content: space-between; }
+}
+
+@media (min-width: 1024px) {
+  .exp-grid { grid-template-columns: repeat(4, 1fr); }
+  .section { padding: 110px 0; }
+  .italy-map { max-width: 460px; }
+}
+
+/* Blocca lo scroll del body quando il menu mobile e' aperto */
+body.nav-open { overflow: hidden; }
+
+/* =====================================================================
+   RESPONSIVE — Mobile (menu a tendina)
+   ===================================================================== */
+@media (max-width: 860px) {
+  .nav-toggle { display: flex; }
+  .main-nav {
+    position: fixed; top: 0; right: 0;
+    height: 100vh; width: min(78vw, 320px);
+    background: var(--green-900);
+    flex-direction: column; align-items: flex-start; justify-content: center;
+    gap: 26px; padding: 0 36px;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+  }
+  .main-nav.is-open { transform: translateX(0); }
+  .main-nav > a { color: var(--ivory); font-size: 1rem; }
+  .lang-switch {
+    border-left: none; border-top: 1px solid rgba(246,241,231,0.2);
+    padding-left: 0; padding-top: 22px; margin-left: 0; width: 100%;
+  }
+  .lang-btn { color: var(--ivory); font-size: 1rem; }
+  .lang-sep { color: rgba(246,241,231,0.4); }
+}
+
+/* Riduci le animazioni se richiesto dal sistema */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

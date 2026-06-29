@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yi Gao Fei · Italy Golf Concierge</title>
+  <meta name="description" content="Yi Gao Fei — Luxury golf travel in Italy. Pacchetti golf e soggiorni di lusso in Toscana e oltre." />
+
+  <!-- Tipografia: serif elegante + sans pulito (incl. cinese) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+</head>
+<body>
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#hero" class="brand" aria-label="Yi Gao Fei">
+        <img src="assets/logo.jpeg" alt="Yi Gao Fei — Italy Golf Concierge" class="brand-logo" />
+      </a>
+
+      <!-- Navigazione -->
+      <nav class="main-nav" id="mainNav" aria-label="Navigazione principale">
+        <a href="#map" data-i18n="nav.destinations">Destinazioni</a>
+        <a href="#experience" data-i18n="nav.experience">Esperienza</a>
+        <a href="#packages" data-i18n="nav.packages">Pacchetti</a>
+        <a href="#contact" data-i18n="nav.contact">Contatti</a>
+
+        <!-- Selettore lingua -->
+        <div class="lang-switch" role="group" aria-label="Lingua">
+          <button type="button" class="lang-btn" data-lang="it">IT</button>
+          <span class="lang-sep">/</span>
+          <button type="button" class="lang-btn" data-lang="zh">中文</button>
+        </div>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <p class="eyebrow" data-i18n="hero.eyebrow">ITALY · GOLF CONCIERGE</p>
+      <h1 class="hero-title" data-i18n="hero.title">Il golf incontra il lusso italiano</h1>
+      <p class="hero-sub" data-i18n="hero.subtitle">Campi leggendari, dimore esclusive, esperienze su misura.</p>
+      <a href="#map" class="btn btn-gold" data-i18n="hero.cta">Scopri le destinazioni</a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <span data-i18n="hero.scroll">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================= GARANZIE (info generali) ============================= -->
+  <section class="guarantees" id="guarantees" aria-label="I nostri servizi">
+    <div class="container guarantees-grid">
+      <div class="guarantee">
+        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+        <h3 data-i18n="guar.items.tee.title">Tee Time Garantito</h3>
+        <p data-i18n="guar.items.tee.text">Prenotiamo noi al club</p>
+      </div>
+      <div class="guarantee">
+        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 7.5C14.8 6.6 13.5 6 12 6c-3 0-5 2.2-5 6s2 6 5 6c1.5 0 2.8-.6 4-1.5M6 10.5h7M6 13.5h6"/></svg>
+        <h3 data-i18n="guar.items.price.title">Best Price &amp; No Fees</h3>
+        <p data-i18n="guar.items.price.text">Nessuna commissione nascosta</p>
+      </div>
+      <div class="guarantee">
+        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 19c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/></svg>
+        <h3 data-i18n="guar.items.concierge.title">Personal Concierge</h3>
+        <p data-i18n="guar.items.concierge.text">Un esperto sempre a tua disposizione</p>
+      </div>
+      <div class="guarantee">
+        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c3.6 0 6.5 2.8 6.5 6.4 0 4.3-6.5 12.6-6.5 12.6S5.5 13.2 5.5 8.9C5.5 5.3 8.4 2.5 12 2.5z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <h3 data-i18n="guar.items.exp.title">Esperienze Esclusive</h3>
+        <p data-i18n="guar.items.exp.text">Cantine, castelli e itinerari su misura</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= MAPPA ============================= -->
+  <section class="section section-map" id="map">
+    <div class="container">
+      <p class="section-index">— 01 —</p>
+      <h2 class="section-title" data-i18n="map.title">Le nostre destinazioni</h2>
+      <p class="section-lead" data-i18n="map.lead">Esplora l'Italia del golf. Seleziona una regione per scoprire i nostri itinerari.</p>
+
+      <div class="map-wrapper">
+        <!-- =====================================================================
+             MAPPA INTERATTIVA — Le 20 regioni italiane (confini reali ISTAT).
+             Il contenuto SVG (path delle regioni + etichette) viene generato
+             dinamicamente da js/main.js leggendo data/italy-map.json.
+             - hover su una regione: evidenziazione + nome nel pannello
+             - SOLO la Toscana e' cliccabile -> onRegionClick('toscana')
+             - dopo la selezione e' possibile deselezionare (pulsante "Indietro")
+             ===================================================================== -->
+        <div class="map-stage">
+          <svg class="italy-map" id="italyMap" viewBox="0 0 600 740" role="img"
+               aria-label="Mappa interattiva delle regioni italiane"
+               xmlns="http://www.w3.org/2000/svg"><!-- popolato via JS --></svg>
+        </div>
+
+        <!-- Pannello informativo (popolato via JS su hover / click regione) -->
+        <aside class="map-panel" id="mapPanel" aria-live="polite">
+          <p class="map-panel-hint" data-i18n="map.panel.hint">Passa sulla mappa per esplorare. Clicca la Toscana per iniziare.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= ESPERIENZA ============================= -->
+  <section class="section section-exp" id="experience">
+    <div class="container">
+      <p class="section-index">— 02 —</p>
+      <h2 class="section-title" data-i18n="exp.title">Un'esperienza senza compromessi</h2>
+      <div class="exp-grid">
+        <article class="exp-card">
+          <span class="exp-num">01</span>
+          <h3 data-i18n="exp.items.golf.title">Campi da golf d'eccellenza</h3>
+          <p data-i18n="exp.items.golf.text">Accesso ai green più prestigiosi d'Italia, tee time riservati e maestri dedicati.</p>
+        </article>
+        <article class="exp-card">
+          <span class="exp-num">02</span>
+          <h3 data-i18n="exp.items.stay.title">Dimore di lusso</h3>
+          <p data-i18n="exp.items.stay.text">Ville storiche, relais e resort 5 stelle selezionati per fascino e privacy.</p>
+        </article>
+        <article class="exp-card">
+          <span class="exp-num">03</span>
+          <h3 data-i18n="exp.items.concierge.title">Concierge dedicato</h3>
+          <p data-i18n="exp.items.concierge.text">Assistenza in lingua cinese, trasferimenti privati e itinerari su misura.</p>
+        </article>
+        <article class="exp-card">
+          <span class="exp-num">04</span>
+          <h3 data-i18n="exp.items.taste.title">Gusto & territorio</h3>
+          <p data-i18n="exp.items.taste.text">Degustazioni di vini pregiati, cene stellate e visite esclusive alle cantine.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= PACCHETTI ============================= -->
+  <section class="section section-packages" id="packages">
+    <div class="container">
+      <p class="section-index">— 03 —</p>
+      <h2 class="section-title" data-i18n="pkg.title">Pacchetti su misura</h2>
+      <p class="section-lead" data-i18n="pkg.lead">Itinerari curati nei minimi dettagli. Ogni viaggio è personalizzabile.</p>
+      <div class="pkg-grid">
+        <article class="pkg-card">
+          <div class="pkg-card-body">
+            <p class="pkg-region" data-i18n="map.regions.toscana">Toscana</p>
+            <h3 data-i18n="pkg.items.tuscany.title">Toscana Golf & Ville</h3>
+            <p data-i18n="pkg.items.tuscany.text">5 notti tra Firenze e Chianti, due campi championship, soggiorno in villa con cantina privata.</p>
+            <span class="pkg-tag" data-i18n="pkg.badge.signature">SIGNATURE</span>
+          </div>
+        </article>
+        <article class="pkg-card pkg-card--soon">
+          <div class="pkg-card-body">
+            <p class="pkg-region" data-i18n="pkg.soon.region">Prossimamente</p>
+            <h3 data-i18n="pkg.items.more.title">Nuove destinazioni</h3>
+            <p data-i18n="pkg.items.more.text">Stiamo selezionando nuove regioni e percorsi esclusivi. Resta aggiornato.</p>
+            <span class="pkg-tag pkg-tag--muted" data-i18n="pkg.badge.soon">IN ARRIVO</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= CONTATTI ============================= -->
+  <section class="section section-contact" id="contact">
+    <div class="container">
+      <p class="section-index">— 04 —</p>
+      <h2 class="section-title" data-i18n="contact.title">Parla con noi</h2>
+      <p class="section-lead" data-i18n="contact.lead">Il tuo viaggio inizia da una conversazione. Scansiona il QR per scriverci su WeChat.</p>
+
+      <div class="contact-grid">
+        <!-- QR WeChat -->
+        <div class="contact-qr">
+          <div class="qr-frame">
+            <img src="assets/qr_code.jpeg" alt="WeChat QR — Yi Gao Fei" class="qr-img" />
+          </div>
+          <p class="qr-caption" data-i18n="contact.wechat">WeChat · 微信</p>
+        </div>
+
+        <!-- Dettagli contatto -->
+        <div class="contact-info">
+          <p class="contact-label" data-i18n="contact.emailLabel">Email</p>
+          <p class="contact-value"><a href="mailto:info@yigaofei.com">info@yigaofei.com</a></p>
+
+          <p class="contact-label" data-i18n="contact.areaLabel">Area</p>
+          <p class="contact-value" data-i18n="contact.areaValue">Italia · Toscana e oltre</p>
+
+          <p class="contact-note" data-i18n="contact.note">Risposta in lingua italiana e cinese.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="assets/logo.jpeg" alt="Yi Gao Fei" class="footer-logo" />
+      <p class="footer-copy">© <span id="year"></span> Yi Gao Fei · Italy Golf Concierge</p>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

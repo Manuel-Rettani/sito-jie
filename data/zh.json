@@ -1,0 +1,109 @@
+{
+  "meta": { "htmlLang": "zh" },
+  "nav": {
+    "destinations": "目的地",
+    "experience": "尊享体验",
+    "packages": "行程套餐",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "eyebrow": "意大利 · 高尔夫私人定制",
+    "title": "高尔夫，邂逅意式奢华",
+    "subtitle": "传奇球场、专属庄园、为品味之旅量身打造的尊贵体验。",
+    "cta": "探索目的地",
+    "scroll": "向下滑动"
+  },
+  "map": {
+    "title": "我们的目的地",
+    "lead": "探索意大利的高尔夫版图。在地图上移动光标，点击托斯卡纳，发现专属行程。",
+    "regions": {
+      "valledaosta": "瓦莱达奥斯塔",
+      "piemonte": "皮埃蒙特",
+      "lombardia": "伦巴第",
+      "trentino-altoadige": "特伦蒂诺-上阿迪杰",
+      "veneto": "威尼托",
+      "friuli-venezia-giulia": "弗留利-威尼斯朱利亚",
+      "liguria": "利古里亚",
+      "emilia-romagna": "艾米利亚-罗马涅",
+      "toscana": "托斯卡纳",
+      "umbria": "翁布里亚",
+      "marche": "马尔凯",
+      "lazio": "拉齐奥",
+      "abruzzo": "阿布鲁佐",
+      "molise": "莫利塞",
+      "campania": "坎帕尼亚",
+      "puglia": "普利亚",
+      "basilicata": "巴西利卡塔",
+      "calabria": "卡拉布里亚",
+      "sardegna": "撒丁岛",
+      "sicilia": "西西里岛"
+    },
+    "panel": {
+      "hint": "在地图上移动光标进行探索。点击托斯卡纳，开启旅程。",
+      "comingSoon": "敬请期待",
+      "back": "返回",
+      "toscanaTitle": "托斯卡纳",
+      "toscanaText": "丘陵、葡萄园与传奇球场。在佛罗伦萨、基安蒂与海岸之间，畅享锦标级高尔夫与庄园住宿。",
+      "toscanaCta": "探索托斯卡纳"
+    }
+  },
+  "guar": {
+    "items": {
+      "tee": { "title": "保证开球时间", "text": "由我们代您向球会预订" },
+      "price": { "title": "最优价格 · 无附加费", "text": "绝无隐藏费用" },
+      "concierge": { "title": "私人管家", "text": "专属顾问全程为您服务" },
+      "exp": { "title": "专属体验", "text": "酒庄、古堡与量身定制行程" }
+    }
+  },
+  "exp": {
+    "title": "无与伦比的尊享体验",
+    "items": {
+      "golf": {
+        "title": "顶级高尔夫球场",
+        "text": "畅享意大利最负盛名的球场，专属开球时间与私人教练全程陪同。"
+      },
+      "stay": {
+        "title": "奢华庄园住宿",
+        "text": "甄选历史名邸、精品庄园与五星度假村，兼具魅力与私密。"
+      },
+      "concierge": {
+        "title": "专属管家服务",
+        "text": "全程中文协助、私人接送与量身定制行程。"
+      },
+      "taste": {
+        "title": "味觉与风土",
+        "text": "品鉴名庄佳酿、米其林晚宴，专享酒庄私人参观。"
+      }
+    }
+  },
+  "pkg": {
+    "title": "量身定制套餐",
+    "lead": "每一处细节皆经心打造。所有行程均可个性化定制。",
+    "items": {
+      "tuscany": {
+        "title": "托斯卡纳 · 高尔夫与庄园",
+        "text": "佛罗伦萨与基安蒂5晚之旅，两座锦标级球场，入住带私人酒窖的庄园。"
+      },
+      "more": {
+        "title": "全新目的地",
+        "text": "我们正在甄选更多大区与专属路线，敬请期待。"
+      }
+    },
+    "badge": {
+      "signature": "臻选",
+      "soon": "即将推出"
+    },
+    "soon": {
+      "region": "敬请期待"
+    }
+  },
+  "contact": {
+    "title": "与我们联系",
+    "lead": "您的旅程，始于一次对话。扫描二维码，添加微信咨询。",
+    "wechat": "微信 · WeChat",
+    "emailLabel": "邮箱",
+    "areaLabel": "服务区域",
+    "areaValue": "意大利 · 托斯卡纳及更多",
+    "note": "提供中文与意大利语服务。"
+  }
+}
