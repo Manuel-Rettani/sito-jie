@@ -65,6 +65,3 @@ La fonte dei confini: openpolis / mcortella (ISTAT, licenza CC-BY).
 ## Placeholder ancora da definire
 
 - **Azione Toscana**: oggi apre un pannello informativo (segnaposto).
-- **QR WeChat**: l'immagine `assets/qr_code.jpeg` è già caricata; sostituiscila
-  con quella definitiva quando disponibile.
-- **Email contatto**: in `index.html` è impostata `info@yigaofei.com` (da aggiornare).

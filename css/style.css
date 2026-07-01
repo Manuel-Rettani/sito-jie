@@ -96,15 +96,8 @@ p { margin: 0; }
   justify-content: space-between;
   height: var(--header-h);
 }
-.brand-logo {
-  height: 42px;
-  width: auto;
-  /* il logo ha sfondo bianco: piccola cornice morbida quando trasparente */
-  background: rgba(255,255,255,0.85);
-  padding: 4px 8px;
-  border-radius: var(--radius);
-}
-.is-scrolled .brand-logo { background: transparent; padding: 0; }
+.brand-logo { height: 54px; width: auto; display: block; transition: height 0.3s ease; }
+.is-scrolled .brand-logo { height: 46px; }
 
 /* Navigazione desktop */
 .main-nav { display: flex; align-items: center; gap: 28px; }
@@ -112,7 +105,7 @@ p { margin: 0; }
   font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ivory);
+  color: var(--green-900);
   padding: 6px 0;
   position: relative;
 }
@@ -128,19 +121,16 @@ p { margin: 0; }
 .lang-switch {
   display: flex; align-items: center; gap: 6px;
   padding-left: 22px; margin-left: 4px;
-  border-left: 1px solid rgba(255,255,255,0.35);
+  border-left: 1px solid var(--line);
 }
-.is-scrolled .lang-switch { border-left-color: var(--line); }
 .lang-btn {
   background: none; border: none; cursor: pointer;
   font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.06em;
-  color: var(--ivory); opacity: 0.7; padding: 2px 4px; transition: opacity 0.2s;
+  color: var(--green-900); opacity: 0.7; padding: 2px 4px; transition: opacity 0.2s;
 }
-.is-scrolled .lang-btn { color: var(--green-900); }
 .lang-btn:hover { opacity: 1; }
 .lang-btn.is-active { opacity: 1; color: var(--gold); font-weight: 700; }
-.lang-sep { color: rgba(255,255,255,0.5); }
-.is-scrolled .lang-sep { color: var(--line); }
+.lang-sep { color: var(--line); }
 
 /* Hamburger (mobile) */
 .nav-toggle {
@@ -149,10 +139,9 @@ p { margin: 0; }
   width: 42px; height: 42px; background: none; border: none; cursor: pointer; padding: 8px;
 }
 .nav-toggle span {
-  display: block; height: 2px; width: 100%; background: var(--ivory);
+  display: block; height: 2px; width: 100%; background: var(--green-900);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.is-scrolled .nav-toggle span { background: var(--green-900); }
 .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
 .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -163,22 +152,25 @@ p { margin: 0; }
   min-height: 100vh;
   display: flex;
   align-items: center;
-  color: var(--ivory);
+  color: var(--ink);
   background:
-    linear-gradient(160deg, rgba(15,51,36,0.55), rgba(15,51,36,0.78)),
-    radial-gradient(120% 90% at 70% 20%, #2f6b48 0%, #123a28 60%, #0c2c1d 100%);
+    radial-gradient(120% 90% at 68% 12%, #ffffff 0%, var(--cream) 46%, var(--ivory) 100%);
   text-align: center;
   overflow: hidden;
 }
-/* texture sottile a punti dorati */
+/* texture sottile a punti verdi */
 .hero-overlay {
   position: absolute; inset: 0;
-  background-image: radial-gradient(rgba(184,146,74,0.18) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(22,73,47,0.06) 1px, transparent 1px);
   background-size: 26px 26px;
-  opacity: 0.5;
+  opacity: 0.7;
   pointer-events: none;
 }
 .hero-content { position: relative; z-index: 2; padding-top: var(--header-h); }
+.hero-logo {
+  width: min(380px, 80vw); height: auto; margin: 0 auto 30px;
+  filter: drop-shadow(0 8px 20px rgba(15,51,36,0.12));
+}
 .eyebrow {
   font-size: 0.8rem; letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--gold-soft); margin-bottom: 22px;
@@ -188,17 +180,18 @@ p { margin: 0; }
   font-size: clamp(2.4rem, 8vw, 4.8rem);
   font-weight: 600;
   letter-spacing: 0.01em;
+  color: var(--green-900);
   max-width: 16ch; margin: 0 auto 22px;
 }
 .hero-sub {
   font-size: clamp(1rem, 2.6vw, 1.2rem);
-  color: rgba(246,241,231,0.85);
+  color: var(--muted);
   max-width: 38ch; margin: 0 auto 38px; font-weight: 300;
 }
 .scroll-hint {
   position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
   z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
-  font-size: 0.68rem; letter-spacing: 0.28em; color: rgba(246,241,231,0.7);
+  font-size: 0.68rem; letter-spacing: 0.28em; color: var(--muted);
 }
 .scroll-line { width: 1px; height: 46px; background: linear-gradient(var(--gold), transparent); }
 
@@ -227,9 +220,9 @@ p { margin: 0; }
   padding: 54px 0;
 }
 .guarantees-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 38px 20px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 38px 22px;
 }
-.guarantee { text-align: center; color: var(--ivory); }
+.guarantee { flex: 1 1 140px; max-width: 190px; text-align: center; color: var(--ivory); }
 .guarantee-ico {
   width: 38px; height: 38px; margin: 0 auto 16px;
   fill: none; stroke: var(--gold); stroke-width: 1.4;
@@ -392,10 +385,10 @@ p { margin: 0; }
 .contact-note { margin-top: 26px; color: rgba(246,241,231,0.6); font-size: 0.9rem; font-weight: 300; }
 
 /* ---------------------- Footer ---------------------- */
-.site-footer { background: var(--green-900); border-top: 1px solid rgba(246,241,231,0.12); padding: 34px 0; }
+.site-footer { background: var(--ivory); border-top: 1px solid var(--line); padding: 40px 0; }
 .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
-.footer-logo { height: 48px; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: var(--radius); }
-.footer-copy { color: rgba(246,241,231,0.55); font-size: 0.82rem; letter-spacing: 0.04em; }
+.footer-logo { height: 72px; width: auto; }
+.footer-copy { color: var(--muted); font-size: 0.82rem; letter-spacing: 0.04em; }
 
 /* =====================================================================
    RESPONSIVE — Tablet / Desktop
@@ -408,7 +401,7 @@ p { margin: 0; }
 }
 
 @media (min-width: 720px) {
-  .guarantees-grid { grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .guarantees-grid { gap: 30px 24px; }
   .exp-grid { grid-template-columns: repeat(2, 1fr); }
   .pkg-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: auto 1fr; gap: 60px; }
@@ -431,25 +424,42 @@ body.nav-open { overflow: hidden; }
    RESPONSIVE — Mobile (menu a tendina)
    ===================================================================== */
 @media (max-width: 860px) {
-  .nav-toggle { display: flex; }
+  /* Il pulsante (hamburger / X) resta SEMPRE sopra al pannello del menu,
+     altrimenti da aperto finirebbe coperto e non si potrebbe chiudere. */
+  .nav-toggle { display: flex; position: relative; z-index: 120; }
   .main-nav {
     position: fixed; top: 0; right: 0;
-    height: 100vh; width: min(78vw, 320px);
+    height: 100vh; width: min(80vw, 320px);
     background: var(--green-900);
     flex-direction: column; align-items: flex-start; justify-content: center;
     gap: 26px; padding: 0 36px;
     transform: translateX(100%);
     transition: transform 0.35s ease;
     box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+    z-index: 105;
   }
   .main-nav.is-open { transform: translateX(0); }
-  .main-nav > a { color: var(--ivory); font-size: 1rem; }
+
+  /* Voci SEMPRE chiare sul pannello scuro, anche quando l'header è "scrolled"
+     (altrimenti diventerebbero verde scuro su verde scuro = invisibili). */
+  .main-nav > a,
+  .site-header.is-scrolled .main-nav > a { color: var(--ivory); font-size: 1.05rem; }
+  .main-nav > a::after { background: var(--gold); }
+
   .lang-switch {
     border-left: none; border-top: 1px solid rgba(246,241,231,0.2);
     padding-left: 0; padding-top: 22px; margin-left: 0; width: 100%;
   }
-  .lang-btn { color: var(--ivory); font-size: 1rem; }
-  .lang-sep { color: rgba(246,241,231,0.4); }
+  .lang-btn,
+  .site-header.is-scrolled .lang-btn { color: var(--ivory); font-size: 1rem; opacity: 0.85; }
+  .lang-btn.is-active,
+  .site-header.is-scrolled .lang-btn.is-active { color: var(--gold); opacity: 1; }
+  .lang-sep,
+  .site-header.is-scrolled .lang-sep { color: rgba(246,241,231,0.4); }
+
+  /* X di chiusura sempre chiara sul pannello scuro */
+  .nav-toggle.is-open span,
+  .site-header.is-scrolled .nav-toggle.is-open span { background: var(--ivory); }
 }
 
 /* Riduci le animazioni se richiesto dal sistema */

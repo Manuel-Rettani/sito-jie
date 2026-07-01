@@ -53,13 +53,25 @@
         navToggle.setAttribute("aria-expanded", String(open));
         document.body.classList.toggle("nav-open", open);
       });
+      function closeNav() {
+        mainNav.classList.remove("is-open");
+        navToggle.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("nav-open");
+      }
+      // Chiudi cliccando una voce
       mainNav.querySelectorAll("a").forEach(function (a) {
-        a.addEventListener("click", function () {
-          mainNav.classList.remove("is-open");
-          navToggle.classList.remove("is-open");
-          navToggle.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("nav-open");
-        });
+        a.addEventListener("click", closeNav);
+      });
+      // Chiudi toccando fuori dal menu (area di pagina visibile a sinistra)
+      document.addEventListener("click", function (e) {
+        if (!mainNav.classList.contains("is-open")) return;
+        if (mainNav.contains(e.target) || navToggle.contains(e.target)) return;
+        closeNav();
+      });
+      // Chiudi con il tasto ESC
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeNav();
       });
     }
 
