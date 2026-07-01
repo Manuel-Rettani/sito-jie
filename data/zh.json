@@ -45,12 +45,20 @@
       "toscanaTitle": "托斯卡纳",
       "toscanaText": "丘陵、葡萄园与传奇球场。在佛罗伦萨、基安蒂与海岸之间，畅享锦标级高尔夫与庄园住宿。",
       "toscanaCta": "探索托斯卡纳"
+    },
+    "golf": {
+      "back": "返回意大利",
+      "title": "托斯卡纳的高尔夫球场",
+      "holes": "洞",
+      "pick": "在地图上选择一个球场查看详情。",
+      "packages": "可预订套餐",
+      "viewProgram": "查看行程",
+      "days": "天"
     }
   },
   "guar": {
     "items": {
       "tee": { "title": "保证开球时间", "text": "由我们代您向球会预订" },
-      "price": { "title": "全程透明", "text": "绝无隐藏费用" },
       "ncc": { "title": "专车服务", "text": "配备专属司机的豪华座驾" },
       "concierge": { "title": "私人管家", "text": "专属顾问全程为您服务" },
       "exp": { "title": "专属体验", "text": "酒庄、古堡与量身定制行程" }

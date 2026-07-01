@@ -25,8 +25,8 @@
 
       <!-- Navigazione -->
       <nav class="main-nav" id="mainNav" aria-label="Navigazione principale">
-        <a href="#map" data-i18n="nav.destinations">Destinazioni</a>
         <a href="#experience" data-i18n="nav.experience">Esperienza</a>
+        <a href="#map" data-i18n="nav.destinations">Destinazioni</a>
         <a href="#packages" data-i18n="nav.packages">Pacchetti</a>
         <a href="#contact" data-i18n="nav.contact">Contatti</a>
 
@@ -59,71 +59,10 @@
     </div>
   </section>
 
-  <!-- ============================= GARANZIE (info generali) ============================= -->
-  <section class="guarantees" id="guarantees" aria-label="I nostri servizi">
-    <div class="container guarantees-grid">
-      <div class="guarantee">
-        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-        <h3 data-i18n="guar.items.tee.title">Tee Time Garantito</h3>
-        <p data-i18n="guar.items.tee.text">Prenotiamo noi al club</p>
-      </div>
-      <div class="guarantee">
-        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.2-2.9 7.6-7 8.9C7.9 18.6 5 15.2 5 11V6l7-3z"/><path d="M9 11.5l2 2 4-4.5"/></svg>
-        <h3 data-i18n="guar.items.price.title">Trasparenza Totale</h3>
-        <p data-i18n="guar.items.price.text">Nessuna commissione nascosta</p>
-      </div>
-      <div class="guarantee">
-        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13l1.6-4.2A2 2 0 0 1 7.5 7.5h9a2 2 0 0 1 1.9 1.3L20 13"/><path d="M3.5 13h17v4.4a.8.8 0 0 1-.8.8h-1.4a.8.8 0 0 1-.8-.8V17H6.5v.4a.8.8 0 0 1-.8.8H4.3a.8.8 0 0 1-.8-.8z"/><circle cx="7.6" cy="16.9" r="1.05"/><circle cx="16.4" cy="16.9" r="1.05"/></svg>
-        <h3 data-i18n="guar.items.ncc.title">Servizio NCC</h3>
-        <p data-i18n="guar.items.ncc.text">Auto con autista privato a tua disposizione</p>
-      </div>
-      <div class="guarantee">
-        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 19c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/></svg>
-        <h3 data-i18n="guar.items.concierge.title">Personal Concierge</h3>
-        <p data-i18n="guar.items.concierge.text">Un esperto sempre a tua disposizione</p>
-      </div>
-      <div class="guarantee">
-        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c3.6 0 6.5 2.8 6.5 6.4 0 4.3-6.5 12.6-6.5 12.6S5.5 13.2 5.5 8.9C5.5 5.3 8.4 2.5 12 2.5z"/><circle cx="12" cy="9" r="2.4"/></svg>
-        <h3 data-i18n="guar.items.exp.title">Esperienze Esclusive</h3>
-        <p data-i18n="guar.items.exp.text">Cantine, castelli e itinerari su misura</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================= MAPPA ============================= -->
-  <section class="section section-map" id="map">
-    <div class="container">
-      <p class="section-index">— 01 —</p>
-      <h2 class="section-title" data-i18n="map.title">Le nostre destinazioni</h2>
-      <p class="section-lead" data-i18n="map.lead">Esplora l'Italia del golf. Seleziona una regione per scoprire i nostri itinerari.</p>
-
-      <div class="map-wrapper">
-        <!-- =====================================================================
-             MAPPA INTERATTIVA — Le 20 regioni italiane (confini reali ISTAT).
-             Il contenuto SVG (path delle regioni + etichette) viene generato
-             dinamicamente da js/main.js leggendo data/italy-map.json.
-             - hover su una regione: evidenziazione + nome nel pannello
-             - SOLO la Toscana e' cliccabile -> onRegionClick('toscana')
-             - dopo la selezione e' possibile deselezionare (pulsante "Indietro")
-             ===================================================================== -->
-        <div class="map-stage">
-          <svg class="italy-map" id="italyMap" viewBox="0 0 600 740" role="img"
-               aria-label="Mappa interattiva delle regioni italiane"
-               xmlns="http://www.w3.org/2000/svg"><!-- popolato via JS --></svg>
-        </div>
-
-        <!-- Pannello informativo (popolato via JS su hover / click regione) -->
-        <aside class="map-panel" id="mapPanel" aria-live="polite">
-          <p class="map-panel-hint" data-i18n="map.panel.hint">Passa sulla mappa per esplorare. Clicca la Toscana per iniziare.</p>
-        </aside>
-      </div>
-    </div>
-  </section>
-
   <!-- ============================= ESPERIENZA ============================= -->
   <section class="section section-exp" id="experience">
     <div class="container">
-      <p class="section-index">— 02 —</p>
+      <p class="section-index">— 01 —</p>
       <h2 class="section-title" data-i18n="exp.title">Un'esperienza senza compromessi</h2>
       <div class="exp-grid">
         <article class="exp-card">
@@ -146,6 +85,86 @@
           <h3 data-i18n="exp.items.taste.title">Gusto & territorio</h3>
           <p data-i18n="exp.items.taste.text">Degustazioni di vini pregiati, cene stellate e visite esclusive alle cantine.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= MAPPA ============================= -->
+  <section class="section section-map" id="map">
+    <div class="container">
+      <p class="section-index">— 02 —</p>
+      <h2 class="section-title" data-i18n="map.title">Le nostre destinazioni</h2>
+      <p class="section-lead" data-i18n="map.lead">Esplora l'Italia del golf. Seleziona una regione per scoprire i nostri itinerari.</p>
+
+      <div class="map-wrapper" id="mapWrapper">
+        <!-- =====================================================================
+             MAPPA INTERATTIVA — Le 20 regioni italiane (confini reali ISTAT).
+             Il contenuto SVG (path delle regioni + etichette) viene generato
+             dinamicamente da js/main.js leggendo data/italy-map.json.
+             - hover su una regione: evidenziazione + nome nel pannello
+             - clic sulla Toscana -> immagine statica della Toscana con i campi da golf
+             ===================================================================== -->
+        <div class="map-stage" id="mapStage">
+          <svg class="italy-map" id="italyMap" viewBox="0 0 600 740" role="img"
+               aria-label="Mappa interattiva delle regioni italiane"
+               xmlns="http://www.w3.org/2000/svg"><!-- popolato via JS --></svg>
+        </div>
+
+        <!-- Pannello informativo (popolato via JS su hover / click regione) -->
+        <aside class="map-panel" id="mapPanel" aria-live="polite">
+          <p class="map-panel-hint" data-i18n="map.panel.hint">Passa sulla mappa per esplorare. Clicca la Toscana per iniziare.</p>
+        </aside>
+
+        <!-- =====================================================================
+             VISTA REGIONE — immagine statica della sola Toscana (stesso colore
+             della mappa d'Italia) con i campi da golf come pin. I campi sono
+             caricati da data/golf-courses.json; la geometria e la proiezione
+             delle coordinate da data/toscana-map.json.
+             Clic su un pin -> dettagli campo (lingua attiva) + galleria foto.
+             ===================================================================== -->
+        <div class="golf-view" id="golfView" hidden>
+          <div class="golf-view-head">
+            <button type="button" class="golf-back" id="golfBack">
+              <span aria-hidden="true">&larr;</span> <span data-i18n="map.golf.back">Torna all'Italia</span>
+            </button>
+            <h3 class="golf-title" data-i18n="map.golf.title">Campi da golf in Toscana</h3>
+          </div>
+          <div class="golf-layout">
+            <div class="golf-map" id="golfMap"><!-- SVG Toscana + pin generati via JS --></div>
+            <aside class="golf-panel" id="golfPanel" aria-live="polite">
+              <p class="golf-panel-hint" data-i18n="map.golf.pick">Seleziona un campo sulla mappa per vederne i dettagli.</p>
+            </aside>
+          </div>
+
+          <!-- Pacchetti prenotabili (generati via JS da golf-courses.json) -->
+          <div class="golf-packages" id="golfPackages"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= GARANZIE (info generali) ============================= -->
+  <section class="guarantees" id="guarantees" aria-label="I nostri servizi">
+    <div class="container guarantees-grid">
+      <div class="guarantee">
+        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+        <h3 data-i18n="guar.items.tee.title">Tee Time Garantito</h3>
+        <p data-i18n="guar.items.tee.text">Prenotiamo noi al club</p>
+      </div>
+      <div class="guarantee">
+        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13l1.6-4.2A2 2 0 0 1 7.5 7.5h9a2 2 0 0 1 1.9 1.3L20 13"/><path d="M3.5 13h17v4.4a.8.8 0 0 1-.8.8h-1.4a.8.8 0 0 1-.8-.8V17H6.5v.4a.8.8 0 0 1-.8.8H4.3a.8.8 0 0 1-.8-.8z"/><circle cx="7.6" cy="16.9" r="1.05"/><circle cx="16.4" cy="16.9" r="1.05"/></svg>
+        <h3 data-i18n="guar.items.ncc.title">Servizio NCC</h3>
+        <p data-i18n="guar.items.ncc.text">Auto con autista privato a tua disposizione</p>
+      </div>
+      <div class="guarantee">
+        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 19c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/></svg>
+        <h3 data-i18n="guar.items.concierge.title">Personal Concierge</h3>
+        <p data-i18n="guar.items.concierge.text">Un esperto sempre a tua disposizione</p>
+      </div>
+      <div class="guarantee">
+        <svg class="guarantee-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c3.6 0 6.5 2.8 6.5 6.4 0 4.3-6.5 12.6-6.5 12.6S5.5 13.2 5.5 8.9C5.5 5.3 8.4 2.5 12 2.5z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <h3 data-i18n="guar.items.exp.title">Esperienze Esclusive</h3>
+        <p data-i18n="guar.items.exp.text">Cantine, castelli e itinerari su misura</p>
       </div>
     </div>
   </section>
@@ -214,6 +233,15 @@
       <p class="footer-copy">© <span id="year"></span> Yi Gao Fei · Italy Golf Concierge</p>
     </div>
   </footer>
+
+  <!-- ============================= MODALE PROGRAMMA PACCHETTO ============================= -->
+  <div class="modal" id="pkgModal" hidden role="dialog" aria-modal="true" aria-label="Programma del pacchetto">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog">
+      <button type="button" class="modal-close" id="pkgModalClose" aria-label="Chiudi">&times;</button>
+      <div class="modal-content" id="pkgModalContent"><!-- programma (markdown) generato via JS --></div>
+    </div>
+  </div>
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>

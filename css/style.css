@@ -295,6 +295,138 @@ p { margin: 0; }
   color: var(--muted); padding: 4px 6px; transition: color 0.2s;
 }
 .map-panel-back:hover { color: var(--green-700); }
+
+/* ---------------------- Vista campi da golf (immagine statica Toscana) ---------------------- */
+.golf-view { width: 100%; }
+/* Quando la vista golf e' attiva: nascondi la mappa d'Italia + pannello */
+.map-wrapper.golf-active { display: block; }
+.map-wrapper.golf-active .map-stage,
+.map-wrapper.golf-active .map-panel { display: none; }
+.golf-view-head {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  justify-content: center; margin-bottom: 24px;
+}
+.golf-title { font-family: var(--serif); font-size: 1.5rem; color: var(--green-900); margin: 0; }
+.golf-back {
+  background: none; border: 1px solid var(--green-700); color: var(--green-700);
+  border-radius: var(--radius); padding: 9px 18px; cursor: pointer;
+  font-family: var(--sans); font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.golf-back:hover { background: var(--green-700); color: #fff; }
+
+.golf-layout { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+.golf-map { width: 100%; display: flex; justify-content: center; }
+.golf-svg { width: 100%; max-width: 400px; height: auto; filter: drop-shadow(0 14px 30px rgba(15,51,36,0.16)); }
+.golf-region { stroke: #fff; stroke-width: 1; }
+/* pin a pallina da golf: verde a riposo, oro su hover / selezionato */
+.golf-pin { cursor: pointer; }
+.golf-pin path:first-of-type { transition: fill 0.2s ease; }
+.golf-pin:hover path:first-of-type,
+.golf-pin:focus path:first-of-type,
+.golf-pin.is-active path:first-of-type { fill: var(--gold); }
+.golf-pin:focus { outline: none; }
+
+/* pannello dettagli + galleria */
+.golf-panel {
+  width: 100%; max-width: 440px; background: #fff;
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; min-height: 150px;
+}
+.golf-panel-hint { color: var(--muted); font-style: italic; padding: 46px 30px; text-align: center; }
+.golf-gallery { position: relative; width: 100%; aspect-ratio: 16 / 10; background: var(--green-900); overflow: hidden; }
+.golf-gallery-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s ease; }
+.golf-gallery-img.is-broken { opacity: 0; }
+.golf-gal-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px; border-radius: 50%; border: none;
+  background: rgba(255,255,255,0.85); color: var(--green-900);
+  font-size: 1.5rem; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;
+}
+.golf-gal-nav:hover { background: #fff; }
+.golf-gal-prev { left: 12px; } .golf-gal-next { right: 12px; }
+.golf-gal-count {
+  position: absolute; bottom: 12px; right: 12px;
+  background: rgba(15,51,36,0.72); color: var(--ivory);
+  font-size: 0.72rem; letter-spacing: 0.06em; padding: 3px 10px; border-radius: 20px;
+}
+.golf-info { padding: 24px 28px; }
+.golf-info-name { font-family: var(--serif); font-size: 1.5rem; color: var(--green-900); margin: 0 0 6px; }
+.golf-info-meta { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+.golf-info-desc { color: var(--muted); line-height: 1.6; margin: 0; }
+
+@media (min-width: 860px) {
+  .golf-view-head { justify-content: flex-start; }
+  .golf-layout { flex-direction: row; align-items: flex-start; justify-content: center; gap: 46px; }
+  .golf-map { width: auto; flex: 0 0 auto; }
+  .golf-svg { width: 400px; }
+  .golf-panel { flex: 0 0 380px; margin-top: 6px; }
+}
+
+/* ---- Pacchetti prenotabili (sotto la mappa) ---- */
+.golf-packages { margin-top: 54px; }
+.golf-packages-title {
+  font-family: var(--serif); font-size: 1.6rem; color: var(--green-900);
+  text-align: center; margin: 0 0 28px;
+}
+.pkg2-grid {
+  display: grid; grid-template-columns: 1fr; gap: 22px;
+  max-width: 980px; margin: 0 auto;
+}
+.pkg2-card {
+  text-align: left; background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 26px 26px 24px; cursor: pointer;
+  font-family: inherit; position: relative; overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.pkg2-card::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(var(--green-700), var(--gold));
+}
+.pkg2-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(15,51,36,0.12); border-color: transparent; }
+.pkg2-days {
+  display: inline-block; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold); border-radius: 2px; padding: 3px 10px; margin-bottom: 12px;
+}
+.pkg2-name { font-family: var(--serif); font-size: 1.35rem; color: var(--green-900); margin: 0 0 8px; }
+.pkg2-summary { color: var(--muted); font-weight: 300; margin: 0 0 16px; line-height: 1.55; }
+.pkg2-cta { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-700); font-weight: 500; }
+@media (min-width: 720px) { .pkg2-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---- Modale programma pacchetto ---- */
+body.modal-open { overflow: hidden; }
+.modal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.modal[hidden] { display: none; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(12,32,22,0.62); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+.modal-dialog {
+  position: relative; background: var(--cream); border-radius: var(--radius);
+  width: min(680px, 100%); max-height: 88vh; overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+  padding: 40px clamp(24px, 5vw, 52px);
+}
+.modal-close {
+  position: absolute; top: 14px; right: 16px; width: 40px; height: 40px;
+  background: none; border: none; font-size: 1.8rem; line-height: 1; color: var(--muted);
+  cursor: pointer; border-radius: 50%; transition: background 0.2s, color 0.2s;
+}
+.modal-close:hover { background: rgba(0,0,0,0.06); color: var(--green-900); }
+.modal-title {
+  font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--green-900); margin: 0 0 8px; padding-right: 40px;
+}
+.modal-title::after { content: ""; display: block; width: 60px; height: 2px; background: var(--gold); margin-top: 14px; }
+/* markdown del programma */
+.modal-md { margin-top: 22px; color: var(--ink); }
+.modal-md .md-h {
+  font-family: var(--serif); color: var(--green-900); font-size: 1.15rem;
+  margin: 22px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line);
+}
+.modal-md .md-h:first-child { margin-top: 0; }
+.modal-md .md-ul { margin: 8px 0 8px; padding-left: 4px; list-style: none; }
+.modal-md .md-ul li { position: relative; padding-left: 20px; margin: 6px 0; color: var(--ink); line-height: 1.5; }
+.modal-md .md-ul li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+.modal-md p { margin: 8px 0; color: var(--muted); line-height: 1.6; }
+.modal-md strong { color: var(--green-900); }
 .map-panel-tag {
   font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 10px;

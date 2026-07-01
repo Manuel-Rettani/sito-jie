@@ -45,12 +45,20 @@
       "toscanaTitle": "Toscana",
       "toscanaText": "Colline, vigneti e green leggendari. Golf championship e soggiorni in villa tra Firenze, Chianti e la costa.",
       "toscanaCta": "Esplora la Toscana"
+    },
+    "golf": {
+      "back": "Torna all'Italia",
+      "title": "Campi da golf in Toscana",
+      "holes": "buche",
+      "pick": "Seleziona un campo sulla mappa per vederne i dettagli.",
+      "packages": "Pacchetti prenotabili",
+      "viewProgram": "Vedi il programma",
+      "days": "giorni"
     }
   },
   "guar": {
     "items": {
       "tee": { "title": "Tee Time Garantito", "text": "Prenotiamo noi al club" },
-      "price": { "title": "Trasparenza Totale", "text": "Nessuna commissione nascosta" },
       "ncc": { "title": "Servizio NCC", "text": "Auto con autista privato a tua disposizione" },
       "concierge": { "title": "Personal Concierge", "text": "Un esperto sempre a tua disposizione" },
       "exp": { "title": "Esperienze Esclusive", "text": "Cantine, castelli e itinerari su misura" }
