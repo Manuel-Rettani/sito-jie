@@ -27,7 +27,7 @@
 
   // Stato vista campi da golf (mappa statica Toscana)
   var golfData = null, tosMap = null, golfActive = false, golfRegion = null;
-  var currentCourse = null, galIdx = 0, currentPackage = null;
+  var currentCourse = null, galIdx = 0, currentModal = null;
 
   document.addEventListener("DOMContentLoaded", function () {
     var yearEl = document.getElementById("year");
@@ -169,7 +169,7 @@
       } else {
         resetPanel();
       }
-      if (currentPackage) renderPackageModal(currentPackage);
+      if (currentModal) renderModalContent();
     });
   }
 
@@ -258,7 +258,7 @@
         '<span class="map-panel-tag">' + escapeHtml(t("map.regions.toscana")) + '</span>' +
         '<h3 class="map-panel-title">' + escapeHtml(t("map.panel.toscanaTitle")) + '</h3>' +
         '<p class="map-panel-text">' + escapeHtml(t("map.panel.toscanaText")) + '</p>' +
-        '<a href="#packages" class="btn btn-outline map-panel-cta">' + escapeHtml(t("map.panel.toscanaCta")) + '</a>';
+        '<a href="#contact" class="btn btn-outline map-panel-cta">' + escapeHtml(t("map.panel.toscanaCta")) + '</a>';
       var back = document.getElementById("mapBack");
       if (back) back.addEventListener("click", deselectRegion);
     }
@@ -279,13 +279,20 @@
       .then(function (d) { tosMap = d; return d; });
   }
 
-  // SVG di una pallina da golf su segnaposto (tip in basso al punto 0,0 del gruppo)
+  // Pallina da golf su tee rosso (ispirata all'icona fornita: pallina bianca
+  // con fossette, contorni marcati, tee rosso). Il punto esatto (tip del tee)
+  // è a (16,40) nel sistema locale del gruppo.
+  var INK = "#14352a"; // contorno scuro (quasi nero, on-brand)
   function golfPinSVG() {
-    return '<path d="M16 39C9 29 2.5 23 2.5 14.5a13.5 13.5 0 1 1 27 0C29.5 23 23 29 16 39Z" fill="#16492f"/>' +
-      '<circle cx="16" cy="14.5" r="9" fill="#ffffff" stroke="#d8ddd6"/>' +
-      '<circle cx="13" cy="12" r="1" fill="#c2cabf"/><circle cx="17.5" cy="11.5" r="1" fill="#c2cabf"/>' +
-      '<circle cx="19.5" cy="15.5" r="1" fill="#c2cabf"/><circle cx="14.5" cy="16" r="1" fill="#c2cabf"/>' +
-      '<circle cx="12.5" cy="17" r="1" fill="#c2cabf"/><circle cx="18" cy="18.5" r="1" fill="#c2cabf"/>';
+    var dimples = [[16, 8], [12, 10], [20, 10], [9.5, 13.5], [14, 13], [18, 13], [22.5, 13.5], [12, 17], [16, 18], [20, 17]]
+      .map(function (d) { return '<circle cx="' + d[0] + '" cy="' + d[1] + '" r="1.3" fill="' + INK + '"/>'; }).join("");
+    return '<ellipse cx="16" cy="40" rx="5.5" ry="1.6" fill="#000000" opacity="0.15"/>' +
+      // tee rosso: coppa + stelo che termina a punta in basso
+      '<path d="M9.5 22.5 H22.5 L20 27 H12 Z" fill="#d33b2c" stroke="' + INK + '" stroke-width="1.4" stroke-linejoin="round"/>' +
+      '<path d="M13 27 H19 L16.6 39.5 H15.4 Z" fill="#d33b2c" stroke="' + INK + '" stroke-width="1.4" stroke-linejoin="round"/>' +
+      // pallina bianca con contorno marcato
+      '<circle cx="16" cy="13" r="11.5" fill="#ffffff" stroke="' + INK + '" stroke-width="1.6"/>' +
+      dimples;
   }
 
   function showGolfView(region) {
@@ -316,7 +323,7 @@
       var xy = project(c.coords);
       svg += '<g class="golf-pin" data-id="' + escapeHtml(c.id) + '" tabindex="0" role="button" ' +
              'aria-label="' + escapeHtml(c.name) + '" ' +
-             'transform="translate(' + (xy[0] - 16) + ',' + (xy[1] - 39) + ')">' +
+             'transform="translate(' + (xy[0] - 16) + ',' + (xy[1] - 40) + ')">' +
              '<title>' + escapeHtml(c.name) + '</title>' + golfPinSVG() + '</g>';
     });
     svg += '</svg>';
@@ -366,12 +373,19 @@
       gallery += '</div>';
     }
 
+    var moreBtn = (course.details) ?
+      '<button type="button" class="golf-more" id="golfMore">' + escapeHtml(t("map.golf.more")) + ' &rarr;</button>' : "";
+
     panel.innerHTML = gallery +
       '<div class="golf-info">' +
         '<h4 class="golf-info-name">' + escapeHtml(course.name) + '</h4>' +
         '<p class="golf-info-meta">' + meta + '</p>' +
         '<p class="golf-info-desc">' + escapeHtml(desc) + '</p>' +
+        moreBtn +
       '</div>';
+
+    var more = document.getElementById("golfMore");
+    if (more) more.addEventListener("click", function () { openCourseModal(course); });
 
     if (photos.length > 1) {
       var img = document.getElementById("golfImg");
@@ -432,8 +446,19 @@
     var pkgs = (golfData && golfData[golfRegion] && golfData[golfRegion].packages) || [];
     var p = pkgs.filter(function (x) { return x.id === id; })[0];
     if (!p) return;
-    currentPackage = p;
-    renderPackageModal(p);
+    openModal(p.name, p.program);
+  }
+
+  // Apre la modale con i dettagli di un campo (markdown)
+  function openCourseModal(course) {
+    if (!course || !course.details) return;
+    openModal(course.name, course.details);
+  }
+
+  // Modale generica: name = stringa o {it,zh}; body = {it,zh} markdown
+  function openModal(name, body) {
+    currentModal = { name: name, body: body };
+    renderModalContent();
     var modal = document.getElementById("pkgModal");
     if (!modal) return;
     modal.hidden = false;
@@ -443,13 +468,15 @@
     if (closeBtn) closeBtn.focus();
   }
 
-  function renderPackageModal(p) {
+  function renderModalContent() {
     var content = document.getElementById("pkgModalContent");
-    if (!content) return;
+    if (!content || !currentModal) return;
     var lang = window.I18N ? window.I18N.getLang() : "it";
+    var name = (typeof currentModal.name === "string") ? currentModal.name : lget(currentModal.name, lang);
+    var md = lget(currentModal.body, lang);
     content.innerHTML =
-      '<h3 class="modal-title">' + escapeHtml(lget(p.name, lang)) + '</h3>' +
-      '<div class="modal-md">' + mdToHtml(lget(p.program, lang)) + '</div>';
+      '<h3 class="modal-title">' + escapeHtml(name) + '</h3>' +
+      '<div class="modal-md">' + mdToHtml(md) + '</div>';
   }
 
   function closeModal() {
@@ -458,7 +485,7 @@
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
-    currentPackage = null;
+    currentModal = null;
   }
 
   /* Mini-renderer Markdown (sottoinsieme sicuro: intestazioni, liste, grassetto).

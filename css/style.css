@@ -171,10 +171,6 @@ p { margin: 0; }
   width: min(380px, 80vw); height: auto; margin: 0 auto 30px;
   filter: drop-shadow(0 8px 20px rgba(15,51,36,0.12));
 }
-.eyebrow {
-  font-size: 0.8rem; letter-spacing: 0.32em; text-transform: uppercase;
-  color: var(--gold-soft); margin-bottom: 22px;
-}
 .hero-title {
   font-family: var(--serif);
   font-size: clamp(2.4rem, 8vw, 4.8rem);
@@ -319,12 +315,12 @@ p { margin: 0; }
 .golf-map { width: 100%; display: flex; justify-content: center; }
 .golf-svg { width: 100%; max-width: 400px; height: auto; filter: drop-shadow(0 14px 30px rgba(15,51,36,0.16)); }
 .golf-region { stroke: #fff; stroke-width: 1; }
-/* pin a pallina da golf: verde a riposo, oro su hover / selezionato */
+/* pin a pallina da golf: bordo oro su hover / selezionato */
 .golf-pin { cursor: pointer; }
-.golf-pin path:first-of-type { transition: fill 0.2s ease; }
-.golf-pin:hover path:first-of-type,
-.golf-pin:focus path:first-of-type,
-.golf-pin.is-active path:first-of-type { fill: var(--gold); }
+.golf-pin circle:first-of-type { transition: stroke 0.15s ease, stroke-width 0.15s ease; }
+.golf-pin:hover circle:first-of-type,
+.golf-pin:focus circle:first-of-type,
+.golf-pin.is-active circle:first-of-type { stroke: var(--gold); stroke-width: 2.5; }
 .golf-pin:focus { outline: none; }
 
 /* pannello dettagli + galleria */
@@ -354,6 +350,13 @@ p { margin: 0; }
 .golf-info-name { font-family: var(--serif); font-size: 1.5rem; color: var(--green-900); margin: 0 0 6px; }
 .golf-info-meta { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
 .golf-info-desc { color: var(--muted); line-height: 1.6; margin: 0; }
+.golf-more {
+  margin-top: 18px; background: none; border: 1px solid var(--green-700); color: var(--green-700);
+  border-radius: var(--radius); padding: 9px 18px; cursor: pointer;
+  font-family: var(--sans); font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.golf-more:hover { background: var(--green-700); color: #fff; }
 
 @media (min-width: 860px) {
   .golf-view-head { justify-content: flex-start; }
@@ -459,36 +462,6 @@ body.modal-open { overflow: hidden; }
 }
 .exp-card p { color: rgba(246,241,231,0.72); font-weight: 300; font-size: 0.98rem; }
 
-/* ---------------------- Pacchetti ---------------------- */
-.section-packages { background: var(--cream); }
-.pkg-grid {
-  display: grid; grid-template-columns: 1fr; gap: 26px; max-width: 880px; margin: 0 auto;
-}
-.pkg-card {
-  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-  overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-}
-.pkg-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(15,51,36,0.12); }
-.pkg-card::before {
-  content: ""; display: block; height: 6px;
-  background: linear-gradient(90deg, var(--green-700), var(--gold));
-}
-.pkg-card--soon { opacity: 0.85; }
-.pkg-card--soon::before { background: var(--line); }
-.pkg-card-body { padding: 32px; }
-.pkg-region {
-  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 10px;
-}
-.pkg-card h3 { font-family: var(--serif); font-size: 1.6rem; color: var(--green-900); margin-bottom: 14px; }
-.pkg-card p { color: var(--muted); font-weight: 300; margin-bottom: 22px; }
-.pkg-tag {
-  display: inline-block; font-size: 0.68rem; letter-spacing: 0.18em;
-  padding: 6px 14px; border: 1px solid var(--gold); color: var(--gold); border-radius: 2px;
-}
-.pkg-tag--muted { border-color: var(--muted); color: var(--muted); }
-
 /* ---------------------- Contatti ---------------------- */
 .section-contact { background: var(--green-900); color: var(--ivory); }
 .section-contact .section-title { color: var(--ivory); }
@@ -535,7 +508,6 @@ body.modal-open { overflow: hidden; }
 @media (min-width: 720px) {
   .guarantees-grid { gap: 30px 24px; }
   .exp-grid { grid-template-columns: repeat(2, 1fr); }
-  .pkg-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: auto 1fr; gap: 60px; }
   .contact-info { text-align: left; }
   .map-wrapper { flex-direction: row; align-items: center; justify-content: center; gap: 56px; }
