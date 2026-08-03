@@ -15,7 +15,26 @@ data/it.json        Testi in italiano
 data/zh.json        Testi in cinese
 assets/logo.jpeg    Logo Yi Gao Fei
 assets/qr_code.jpeg QR WeChat (sezione Contatti)
+assets/fonts/       Font self-hosted (.woff2) + fonts.css — nessuna dipendenza esterna
+tools/              Script di manutenzione (rigenerazione font)
 ```
+
+## Font self-hosted (importante per la Cina)
+
+I font (Cormorant Garamond, Noto Sans SC, Noto Serif SC) sono **ospitati nel
+sito** in `assets/fonts/`, non caricati da Google Fonts (che è bloccato in Cina).
+I file `.woff2` sono **subset ai soli caratteri usati** (IT + ZH), quindi molto
+leggeri (~600 KB in totale).
+
+⚠️ Se aggiungi testo **cinese** con caratteri nuovi nei file `data/*.json`,
+rigenera i subset così i nuovi ideogrammi vengono inclusi:
+
+```bash
+bash tools/regenerate-fonts.sh
+```
+
+(Richiede node/npm e `pip install fonttools brotli`.) Il testo latino/italiano
+non richiede rigenerazione.
 
 ## Come avviare in locale
 

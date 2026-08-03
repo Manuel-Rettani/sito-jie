@@ -1,0 +1,22 @@
+/* =====================================================================
+   Font self-hosted (nessuna dipendenza da Google Fonts) — accessibili
+   anche dalla Cina. I file .woff2 sono subset ai soli caratteri usati sul
+   sito (IT + ZH), generati da tools/regenerate-fonts.sh.
+   Se aggiungi testo cinese con caratteri nuovi, rigenera i subset.
+   ===================================================================== */
+
+/* ---- Cormorant Garamond (serif, latino) ---- */
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("cormorant-400.woff2") format("woff2"); }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("cormorant-600.woff2") format("woff2"); }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 700; font-display: swap; src: url("cormorant-700.woff2") format("woff2"); }
+
+/* ---- Noto Sans SC (sans, cinese) ---- */
+@font-face { font-family: "Noto Sans SC"; font-style: normal; font-weight: 300; font-display: swap; src: url("notosans-sc-300.woff2") format("woff2"); }
+@font-face { font-family: "Noto Sans SC"; font-style: normal; font-weight: 400; font-display: swap; src: url("notosans-sc-400.woff2") format("woff2"); }
+@font-face { font-family: "Noto Sans SC"; font-style: normal; font-weight: 500; font-display: swap; src: url("notosans-sc-500.woff2") format("woff2"); }
+@font-face { font-family: "Noto Sans SC"; font-style: normal; font-weight: 700; font-display: swap; src: url("notosans-sc-700.woff2") format("woff2"); }
+
+/* ---- Noto Serif SC (serif, cinese) ---- */
+@font-face { font-family: "Noto Serif SC"; font-style: normal; font-weight: 400; font-display: swap; src: url("notoserif-sc-400.woff2") format("woff2"); }
+@font-face { font-family: "Noto Serif SC"; font-style: normal; font-weight: 600; font-display: swap; src: url("notoserif-sc-600.woff2") format("woff2"); }
+@font-face { font-family: "Noto Serif SC"; font-style: normal; font-weight: 700; font-display: swap; src: url("notoserif-sc-700.woff2") format("woff2"); }
