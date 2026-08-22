@@ -17,7 +17,7 @@
 
   var STORAGE_KEY = "ygf_lang";
   var DEFAULT_LANG = "it";
-  var SUPPORTED = ["it", "zh"];
+  var SUPPORTED = ["it", "en", "zh"];
   var cache = {};          // { it: {...}, zh: {...} }
   var currentLang = DEFAULT_LANG;
 
@@ -106,6 +106,8 @@
     } catch (e) {}
     var nav = (navigator.language || "").toLowerCase();
     if (nav.indexOf("zh") === 0) return "zh";
+    if (nav.indexOf("it") === 0) return "it";
+    if (nav.indexOf("en") === 0) return "en";
     return DEFAULT_LANG;
   }
 

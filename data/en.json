@@ -1,0 +1,96 @@
+{
+  "meta": { "htmlLang": "en" },
+  "nav": {
+    "destinations": "Destinations",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "ITALY · GOLF CONCIERGE",
+    "title": "Golf meets Italian luxury",
+    "subtitle": "Legendary courses, exclusive residences, tailor-made experiences for the discerning traveler.",
+    "cta": "Discover the destinations"
+  },
+  "map": {
+    "title": "Our destinations",
+    "lead": "Explore golf in Italy. Hover over the map and select Tuscany to discover our itineraries.",
+    "regions": {
+      "valledaosta": "Aosta Valley",
+      "piemonte": "Piedmont",
+      "lombardia": "Lombardy",
+      "trentino-altoadige": "Trentino-Alto Adige",
+      "veneto": "Veneto",
+      "friuli-venezia-giulia": "Friuli-Venezia Giulia",
+      "liguria": "Liguria",
+      "emilia-romagna": "Emilia-Romagna",
+      "toscana": "Tuscany",
+      "umbria": "Umbria",
+      "marche": "Marche",
+      "lazio": "Lazio",
+      "abruzzo": "Abruzzo",
+      "molise": "Molise",
+      "campania": "Campania",
+      "puglia": "Apulia",
+      "basilicata": "Basilicata",
+      "calabria": "Calabria",
+      "sardegna": "Sardinia",
+      "sicilia": "Sicily"
+    },
+    "panel": {
+      "hint": "Hover over the map to explore. Click Tuscany to get started.",
+      "comingSoon": "Coming soon",
+      "back": "Back",
+      "toscanaTitle": "Tuscany",
+      "toscanaText": "Hills, vineyards and legendary greens. Championship golf and villa stays between Florence, Chianti and the coast.",
+      "toscanaCta": "Explore Tuscany"
+    },
+    "golf": {
+      "back": "Back to Italy",
+      "title": "Golf courses in Tuscany",
+      "holes": "holes",
+      "pick": "Select a course on the map to see its details.",
+      "more": "Learn more",
+      "packages": "Bookable packages",
+      "viewProgram": "View the itinerary",
+      "days": "days"
+    }
+  },
+  "guar": {
+    "items": {
+      "tee": { "title": "Guaranteed Tee Time", "text": "We book it for you at the club" },
+      "ncc": { "title": "Chauffeur Service", "text": "Private car with driver at your disposal" },
+      "concierge": { "title": "Personal Concierge", "text": "An expert always at your disposal" },
+      "exp": { "title": "Exclusive Experiences", "text": "Wineries, castles and tailor-made itineraries" }
+    }
+  },
+  "exp": {
+    "title": "An experience without compromise",
+    "items": {
+      "golf": {
+        "title": "Outstanding golf courses",
+        "text": "Access to Italy's most prestigious greens, reserved tee times and dedicated instructors."
+      },
+      "stay": {
+        "title": "Luxury residences",
+        "text": "Historic villas, relais and 5-star resorts selected for charm and privacy."
+      },
+      "concierge": {
+        "title": "Dedicated concierge",
+        "text": "Chinese-speaking assistance, private transfers and tailor-made itineraries."
+      },
+      "taste": {
+        "title": "Taste & terroir",
+        "text": "Fine wine tastings, Michelin-starred dinners and exclusive winery visits."
+      }
+    }
+  },
+  "contact": {
+    "title": "Talk to us",
+    "lead": "Your journey starts with a conversation. Scan the QR code to write to us on WeChat.",
+    "wechat": "WeChat · 微信",
+    "emailLabel": "Email",
+    "areaLabel": "Area",
+    "areaValue": "Italy · Tuscany and beyond",
+    "note": "We reply in Italian, English and Chinese."
+  }
+}

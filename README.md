@@ -51,14 +51,21 @@ In hosting reale (Netlify, Vercel, GitHub Pages, ecc.) funziona senza accorgimen
 
 ## Multilingua — come modificare/aggiungere testi
 
-- Ogni elemento traducibile nell'HTML ha `data-i18n="chiave.nidificata"`.
-- Per cambiare un testo: modifica il valore in **entrambi** i file
-  `data/it.json` e `data/zh.json` (stessa chiave).
-- Per rendere traducibile un nuovo elemento: aggiungi `data-i18n="nuova.chiave"`
-  nell'HTML e la chiave corrispondente nei due JSON.
-- La lingua scelta viene salvata nel browser (localStorage).
+Lingue disponibili: **Italiano** (`it`, default), **English** (`en`), **中文** (`zh`).
 
-Per aggiungere una terza lingua basta creare `data/xx.json` con le stesse
+- Ogni elemento traducibile nell'HTML ha `data-i18n="chiave.nidificata"`.
+- Per cambiare un testo: modifica il valore nei file `data/it.json`,
+  `data/en.json` e `data/zh.json` (stessa chiave in tutti e tre).
+- Per rendere traducibile un nuovo elemento: aggiungi `data-i18n="nuova.chiave"`
+  nell'HTML e la chiave corrispondente nei tre JSON.
+- La lingua scelta viene salvata nel browser (localStorage); se non salvata,
+  si usa la lingua del browser (`it`/`en`/`zh`), altrimenti l'italiano.
+- I contenuti dei campi da golf e dei pacchetti (`data/golf-courses.json`)
+  hanno anch'essi campi `it`/`en`/`zh` per ogni testo (`desc`, `details`,
+  `name`, `summary`, `program`); se manca la chiave `en` o `zh` si usa
+  automaticamente il testo italiano come fallback (vedi `lget()` in `js/main.js`).
+
+Per aggiungere una quarta lingua basta creare `data/xx.json` con le stesse
 chiavi e aggiungere `"xx"` all'elenco `SUPPORTED` in `js/i18n.js`.
 
 ## Mappa interattiva — 20 regioni + placeholder Toscana
