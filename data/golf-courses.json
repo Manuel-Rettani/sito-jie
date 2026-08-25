@@ -73,17 +73,22 @@
         "photos": [
           "assets/courses/toscana/argentario-1.jpg",
           "assets/courses/toscana/argentario-2.jpg",
-          "assets/courses/toscana/argentario-3.jpg"
+          "assets/courses/toscana/argentario-3.jpg",
+          "assets/courses/toscana/argentario-4.jpg",
+          "assets/courses/toscana/argentario-5.jpg",
+          "assets/courses/toscana/argentario-6.jpg",
+          "assets/courses/toscana/argentario-7.jpg",
+          "assets/courses/toscana/argentario-8.jpg"
         ],
         "desc": {
-          "it": "Green panoramici sul promontorio dell'Argentario, tra macchia mediterranea e vista sul mare.",
-          "en": "Panoramic greens on the Argentario promontory, amid Mediterranean scrub and sea views.",
-          "zh": "阿真塔里奥海岬上的全景球场，置身地中海灌木丛，尽享海景。"
+          "it": "Campo da golf costiero molto caratteristico nel sud della Toscana, situato sulla penisola del Monte Argentario, immerso nell'ambiente naturale della Maremma. 18 buche · par 71: il percorso segue l'andamento naturale del terreno tra ulivi, sugheri e macchia mediterranea, con scorci sulla laguna di Orbetello, sulle colline del Monte Argentario e sul Mar Tirreno.",
+          "en": "A highly distinctive coastal golf course in southern Tuscany, set on the Monte Argentario peninsula, immersed in the natural surroundings of the Maremma. 18 holes · par 71: the course follows the natural contours of the land among olive trees, cork oaks and Mediterranean scrub, with views in places over the Orbetello lagoon, the hills of Monte Argentario and the Tyrrhenian Sea.",
+          "zh": "托斯卡纳南部非常有特色的海岸型高尔夫球场，位于 Monte Argentario 半岛，坐落在 Maremma 自然环境之中。18洞 · Par 71，球场依山势自然起伏，周围是橄榄树、软木橡树和地中海植被，部分位置可以欣赏 Orbetello 潟湖、Monte Argentario 山丘以及第勒尼安海的景观。"
         },
         "details": {
-          "it": "## Argentario Golf Club\nUn campo panoramico sul promontorio dell'Argentario, tra mare e macchia mediterranea.\n\n- **Buche:** 18 · par 71\n- **Panorama:** vedute sul Tirreno e sull'isola del Giglio\n- **Resort:** Argentario Golf & Wellness Resort\n- **Nei dintorni:** Porto Ercole e Orbetello",
-          "en": "## Argentario Golf Club\nA panoramic course on the Argentario promontory, between the sea and Mediterranean scrub.\n\n- **Holes:** 18 · par 71\n- **Views:** overlooking the Tyrrhenian Sea and the island of Giglio\n- **Resort:** Argentario Golf & Wellness Resort\n- **Nearby:** Porto Ercole and Orbetello",
-          "zh": "## 阿真塔里奥高尔夫俱乐部\n位于阿真塔里奥海岬的全景球场，坐拥海景与地中海灌木。\n\n- **球洞：** 18洞 · 标准杆71\n- **景观：** 第勒尼安海与吉利奥岛\n- **度假村：** 阿真塔里奥高尔夫温泉度假村\n- **周边：** 波尔托埃尔科莱与奥尔贝泰洛"
+          "it": "## Argentario Golf Club\nL'elemento più caratteristico dell'Argentario è l'ottima integrazione tra il campo e l'ambiente naturale circostante. I dislivelli dei fairway, i boschi, i bunker e gli specchi d'acqua aumentano la componente strategica del gioco, rendendo il percorso più adatto a golfisti con una certa esperienza.\n\n## Strutture del campo\n- **Aree pratica:** driving range, putting green, chipping/pitching green e bunker di allenamento\n- **Golf Academy:** lezioni e allenamento professionale\n- **Pro Shop:** attrezzatura e abbigliamento da golf\n- **Servizi campo:** golf cart, noleggio bastoni\n- **Ristorazione:** ristorante e bar\n- **Resort:** Resort con Spa & Wellness",
+          "en": "## Argentario Golf Club\nThe defining feature of Argentario is how well the course integrates with its natural surroundings. Undulating fairways, woodland, bunkers and water features all add to the strategic challenge, making it a course best suited to golfers with some experience.\n\n## Course facilities\n- **Practice areas:** driving range, putting green, chipping/pitching green and practice bunkers\n- **Golf Academy:** professional lessons and coaching\n- **Pro Shop:** golf equipment and apparel\n- **Course services:** golf carts, club rental\n- **Dining:** restaurant and bar\n- **Resort:** Resort with Spa & Wellness",
+          "zh": "## Argentario Golf Club\nArgentario 最大的特点是把球场与当地自然环境结合得非常好。球道起伏、树林、沙坑和水域共同增加了击球的策略性，比较适合有一定高尔夫经验的客人。\n\n## 球场设施\n- **练习场：** Driving Range、Putting Green、Chipping / Pitching Green 及练习沙坑\n- **Golf Academy：** 专业教学与训练\n- **Pro Shop：** 高尔夫球具与服装\n- **球场服务：** Golf Cart、球杆租赁\n- **餐饮设施：** 餐厅与酒吧\n- **度假村：** Resort，配备 Spa & Wellness"
         }
       },
       {
@@ -92,23 +97,28 @@
         "location": "Punta Ala (GR)",
         "holes": 18,
         "coords": [
-          42.8073,
-          10.7460
+          42.7997,
+          10.7711
         ],
         "photos": [
           "assets/courses/toscana/punta-ala-1.jpg",
           "assets/courses/toscana/punta-ala-2.jpg",
-          "assets/courses/toscana/punta-ala-3.jpg"
+          "assets/courses/toscana/punta-ala-3.jpg",
+          "assets/courses/toscana/punta-ala-4.jpg",
+          "assets/courses/toscana/punta-ala-5.jpg",
+          "assets/courses/toscana/punta-ala-6.jpg",
+          "assets/courses/toscana/punta-ala-7.jpg",
+          "assets/courses/toscana/punta-ala-8.jpg"
         ],
         "desc": {
-          "it": "Fairway tra pini marittimi affacciati sul Tirreno, nel cuore della Maremma toscana.",
-          "en": "Fairways among maritime pines overlooking the Tyrrhenian Sea, in the heart of the Tuscan Maremma.",
-          "zh": "位于托斯卡纳马雷玛，松林环绕、面朝第勒尼安海的球道。"
+          "it": "Uno dei campi da golf panoramici sul mare più rappresentativi della Maremma toscana, tra le colline di Punta Ala e vista sul Mar Tirreno: fondato nel 1964 su progetto di Giulio Cavalsani. 18 buche · par 72, circa 6.168 m su 60 ettari, con il percorso che segue l'andamento naturale del terreno tra pini, sugheri, querce e macchia mediterranea.",
+          "en": "One of the most iconic seaside golf courses in the Tuscan Maremma, set among the hills of Punta Ala with views over the Tyrrhenian Sea: founded in 1964, designed by Giulio Cavalsani. 18 holes · par 72, approximately 6,168 m across 60 hectares, with the course following the natural contours of the terrain through pines, cork oaks, oaks and Mediterranean scrub.",
+          "zh": "托斯卡纳马雷玛地区极具代表性的海景高尔夫球场，坐落于 Punta Ala 山丘之间，俯瞰第勒尼安海。球场始建于 1964年，由 Giulio Cavalsani 设计。18洞 · Par 72，全长约6,168米，占地约60公顷。球场依山势自然起伏，穿梭于松树、软木橡树、栎树和地中海灌木之间。"
         },
         "details": {
-          "it": "## Golf Club Punta Ala\nFairway tra pini marittimi affacciati sul Tirreno, nel cuore della Maremma.\n\n- **Buche:** 18 · par 72\n- **Stile:** percorso mediterraneo tra i pini\n- **Extra:** vicino a spiagge e marina\n- **Nei dintorni:** Castiglione della Pescaia",
-          "en": "## Golf Club Punta Ala\nFairways among maritime pines overlooking the Tyrrhenian Sea, in the heart of the Maremma.\n\n- **Holes:** 18 · par 72\n- **Style:** Mediterranean course among the pines\n- **Extra:** close to beaches and a marina\n- **Nearby:** Castiglione della Pescaia",
-          "zh": "## 蓬塔阿拉高尔夫俱乐部\n松林环绕、面朝第勒尼安海的球道，位于马雷玛腹地。\n\n- **球洞：** 18洞 · 标准杆72\n- **风格：** 松林间的地中海式球场\n- **额外：** 邻近海滩与码头\n- **周边：** 卡斯蒂利奥内-德拉佩斯卡亚"
+          "it": "## Golf Club Punta Ala\nL'elemento più caratteristico di questo campo è la combinazione tra vista mare, vegetazione naturale della Maremma e conformazione collinare. Le pendenze naturali, i boschi e la macchia lungo le buche influenzano le linee di gioco: il risultato è un percorso tanto scenografico quanto impegnativo.\n\n## Strutture del campo\n- **Aree pratica:** driving range e putting green\n- **Golf Academy:** lezioni e allenamento professionale\n- **Pro Shop:** attrezzatura e abbigliamento da golf\n- **Servizi campo:** golf cart (veicoli elettrici), noleggio bastoni\n- **Ristorazione:** ristorante e snack bar\n- **Resort:** Golf & Wellness Resort con Spa & Wellness",
+          "en": "## Golf Club Punta Ala\nThe defining feature of this course is the combination of sea views, the natural vegetation of the Maremma and its hilly terrain. The natural slopes, woodland and scrub along the fairways influence the lines of play, making for a course that is as scenic as it is challenging.\n\n## Course facilities\n- **Practice areas:** driving range and putting green\n- **Golf Academy:** professional lessons and coaching\n- **Pro Shop:** golf equipment and apparel\n- **Course services:** golf carts (electric vehicles), club rental\n- **Dining:** restaurant and snack bar\n- **Resort:** Golf & Wellness Resort with Spa & Wellness",
+          "zh": "## 蓬塔阿拉高尔夫俱乐部\n这里最大的特色是将海景、马雷玛自然植被与山地地形融为一体。球道上的自然坡度、树林与灌木都会影响击球路线，因此球场不仅景观优美，也具有一定的挑战性。\n\n## 球场设施\n- **练习场：** Driving Range 与 Putting Green\n- **Golf Academy：** 专业教学与训练\n- **Pro Shop：** 高尔夫球具与服装\n- **球场服务：** Golf Cart（电动车）、球杆租赁\n- **餐饮设施：** 餐厅与 Snack Bar\n- **度假村：** Golf & Wellness Resort，配备 Spa & Wellness"
         }
       },
       {
@@ -159,6 +169,35 @@
           "it": "## Golf Club Toscana · Il Pelagone\nDiciotto buche tra boschi e colline della Maremma, verso il mare.\n\n- **Buche:** 18 · par 72\n- **Hotel:** Golf Hotel Il Pelagone\n- **Natura:** colline e boschi della Maremma\n- **Nei dintorni:** Follonica e la costa",
           "en": "## Golf Club Toscana · Il Pelagone\nEighteen holes through the woods and hills of the Maremma, towards the sea.\n\n- **Holes:** 18 · par 72\n- **Hotel:** Golf Hotel Il Pelagone\n- **Nature:** hills and woods of the Maremma\n- **Nearby:** Follonica and the coast",
           "zh": "## 托斯卡纳高尔夫俱乐部 · Il Pelagone\n马雷玛森林与丘陵间的18洞球场，一路通向海岸。\n\n- **球洞：** 18洞 · 标准杆72\n- **酒店：** Il Pelagone 高尔夫酒店\n- **自然：** 马雷玛丘陵与森林\n- **周边：** 福洛尼卡与海岸"
+        }
+      },
+      {
+        "id": "vinci",
+        "name": "Golf Club Bellosguardo Vinci",
+        "location": "Vinci (FI)",
+        "holes": 9,
+        "coords": [
+          43.7615,
+          10.9220
+        ],
+        "photos": [
+          "assets/courses/toscana/vinci-1.jpg",
+          "assets/courses/toscana/vinci-2.jpg",
+          "assets/courses/toscana/vinci-3.jpg",
+          "assets/courses/toscana/vinci-4.jpg",
+          "assets/courses/toscana/vinci-5.jpg",
+          "assets/courses/toscana/vinci-6.jpg",
+          "assets/courses/toscana/vinci-7.jpg"
+        ],
+        "desc": {
+          "it": "Nella campagna di Vinci, tra uliveti e vigneti: 9 buche con doppi tee di partenza (par 71, 5.815 m), per un golf panoramico e rilassato sulle colline leonardesche.",
+          "en": "In the countryside of Vinci, among olive groves and vineyards: 9 holes with dual tee positions (par 71, 5,815 m), for relaxed, panoramic golf on the hills of Leonardo's homeland.",
+          "zh": "位于芬奇乡间，橄榄树与葡萄园环绕：9洞双发球台设计（标准杆71，5815米），尽享达·芬奇故乡丘陵间的悠闲高尔夫时光。"
+        },
+        "details": {
+          "it": "## Golf Club Bellosguardo Vinci\nCampo immerso tra uliveti e vigneti sulle colline di Vinci, con vista sulla campagna leonardesca.\n\n- **Percorso:** 9 buche con doppi tee di partenza, giocabili su un giro da 18 · par 71 · 5.815 m\n- **Terreno:** dolci colline tra olivi e vigne, tecnico e panoramico\n- **Posizione:** Vinci (FI), a poco meno di un'ora di macchina da Firenze\n\n## Strutture del campo\n- **Aree pratica:** driving range, putting green e pitching green\n- **Ristorazione:** Ristorante Bellosguardo\n- **Strutture ricreative:** piscina\n- **Altro:** fattoria interna e lezioni con maestri professionisti",
+          "en": "## Golf Club Bellosguardo Vinci\nA course set among olive groves and vineyards on the hills of Vinci, with views over Leonardo da Vinci's countryside.\n\n- **Course:** 9 holes with dual tee positions, playable as an 18-hole round · par 71 · 5,815 m\n- **Terrain:** gently rolling hills among olives and vines, technical and scenic\n- **Location:** Vinci (FI), just under an hour's drive from Florence\n\n## Course facilities\n- **Practice areas:** driving range, putting green and pitching green\n- **Dining:** Ristorante Bellosguardo\n- **Leisure facilities:** swimming pool\n- **Other:** on-site farm and lessons with professional instructors",
+          "zh": "## Bellosguardo Vinci 高尔夫俱乐部\n球场坐落于芬奇丘陵间，橄榄树与葡萄园环绕，俯瞰达·芬奇故乡的乡村风光。\n\n- **球场：** 9洞双发球台设计，可作为18洞回合游玩 · 标准杆71 · 5815米\n- **地形：** 缓丘地形，橄榄树与葡萄园间，兼具技术性与观赏性\n- **位置：** 芬奇（佛罗伦萨省），驾车距佛罗伦萨不到一小时车程\n\n## 球场设施\n- **练习场：** Driving Range、Putting Green 与 Pitching Green\n- **餐饮设施：** Bellosguardo 餐厅\n- **休闲设施：** 游泳池\n- **其他：** 内设农场，配有专业教练课程"
         }
       }
     ],
