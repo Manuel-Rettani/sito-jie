@@ -346,6 +346,20 @@
     document.querySelectorAll(".golf-pin").forEach(function (p) { p.classList.remove("is-active"); });
     if (pin) pin.classList.add("is-active");
     renderCourseDetails(course);
+    scrollPanelIntoViewIfNeeded();
+  }
+
+  /* Su mobile mappa e pannello sono impilati: dopo la selezione di un campo,
+     se il pannello non e' comodamente visibile lo si porta in vista.
+     Su desktop (mappa e pannello affiancati) la condizione non scatta quasi mai. */
+  function scrollPanelIntoViewIfNeeded() {
+    var panel = document.getElementById("golfPanel");
+    if (!panel) return;
+    var rect = panel.getBoundingClientRect();
+    if (rect.top <= window.innerHeight * 0.4) return;
+    var header = document.getElementById("siteHeader");
+    var headerH = header ? header.offsetHeight : 0;
+    window.scrollTo({ top: window.scrollY + rect.top - headerH - 16, behavior: "smooth" });
   }
 
   // Pannello dettagli campo + galleria foto scorrevole
