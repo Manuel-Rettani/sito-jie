@@ -133,17 +133,22 @@
         "photos": [
           "assets/courses/toscana/la-bagnaia-1.jpg",
           "assets/courses/toscana/la-bagnaia-2.jpg",
-          "assets/courses/toscana/la-bagnaia-3.jpg"
+          "assets/courses/toscana/la-bagnaia-3.jpg",
+          "assets/courses/toscana/la-bagnaia-4.jpg",
+          "assets/courses/toscana/la-bagnaia-5.jpg",
+          "assets/courses/toscana/la-bagnaia-6.jpg",
+          "assets/courses/toscana/la-bagnaia-7.jpg",
+          "assets/courses/toscana/la-bagnaia-8.jpg"
         ],
         "desc": {
-          "it": "Resort 5 stelle nelle campagne senesi: campo championship tra vigneti e uliveti.",
-          "en": "5-star resort in the Sienese countryside: a championship course among vineyards and olive groves.",
-          "zh": "锡耶纳乡间的五星度假村：葡萄园与橄榄园环绕的锦标级球场。"
+          "it": "Situato sulle colline toscane a sud di Siena, un campo da golf che unisce perfettamente golf, paesaggio naturale e soggiorno di lusso. 18 buche · par 71: disegnato dal celebre architetto Robert Trent Jones Jr., si estende su circa 130 ettari per una lunghezza di circa 6.101 metri. Il percorso si snoda lungo le dolci colline senesi, con fairway ampi, bunker strategici e laghi, unendo sfida tecnica e piacere visivo.",
+          "en": "Set in the Tuscan hills south of Siena, a golf course that perfectly blends golf, natural landscape and luxury living. 18 holes · par 71: designed by the world-renowned architect Robert Trent Jones Jr., it spans about 130 hectares for a length of around 6,101 meters. The course winds along the gently rolling Sienese hills, with wide fairways, strategic bunkers and lakes, combining challenge with scenic beauty.",
+          "zh": "坐落于锡耶纳南部的托斯卡纳丘陵，是一座将高尔夫、自然景观与奢华度假完美结合的高尔夫球场。18洞 · Par 71，球场由世界著名高尔夫设计师 Robert Trent Jones Jr. 设计，占地约130公顷，全长约6,101米。球道沿着锡耶纳柔和起伏的丘陵展开，拥有开阔的球道、战略性沙坑和湖泊，兼具挑战性与观赏性。"
         },
         "details": {
-          "it": "## Royal Golf La Bagnaia\nCampo championship immerso nelle campagne senesi, parte di un resort 5 stelle.\n\n- **Buche:** 18 · par 71\n- **Resort:** La Bagnaia Resort (Siena)\n- **Contesto:** vigneti, uliveti e borgo storico\n- **Nei dintorni:** Siena a 15 minuti",
-          "en": "## Royal Golf La Bagnaia\nA championship course set in the Sienese countryside, part of a 5-star resort.\n\n- **Holes:** 18 · par 71\n- **Resort:** La Bagnaia Resort (Siena)\n- **Setting:** vineyards, olive groves and a historic hamlet\n- **Nearby:** Siena, 15 minutes away",
-          "zh": "## 锡耶纳皇家 La Bagnaia 高尔夫\n锦标级球场坐落于锡耶纳乡间，隶属五星度假村。\n\n- **球洞：** 18洞 · 标准杆71\n- **度假村：** La Bagnaia度假村（锡耶纳）\n- **环境：** 葡萄园、橄榄园与古村\n- **周边：** 距锡耶纳15分钟"
+          "it": "## Royal Golf La Bagnaia\nRoyal Golf La Bagnaia ha vinto il World Golf Awards 2023 come «Miglior Campo da Golf d'Italia»; nel 2025 il suo resort ha inoltre ottenuto il titolo di «Miglior Golf Hotel d'Italia».\n\n## Club House & Ristorante\nLa Club House ospita il ristorante Il Rosmarino, con una terrazza panoramica affacciata sulle 18 buche\n\n## Strutture del campo\n- **Aree pratica:** driving range, putting green, chipping/pitching green e bunker di allenamento\n- **Golf Academy:** lezioni e allenamento professionale\n- **Pro Shop:** attrezzatura e accessori da golf\n- **Servizi campo:** golf cart, noleggio bastoni\n- **Ristorazione:** ristorante e bar Il Rosmarino\n- **Fitness e soggiorno:** palestra, Golf Resort",
+          "en": "## Royal Golf La Bagnaia\nRoyal Golf La Bagnaia won the World Golf Awards 2023 for «Italy's Best Golf Course»; in 2025 its resort also earned the title of «Italy's Best Golf Hotel».\n\n## Club House & Restaurant\nThe Club House is home to Il Rosmarino restaurant, with a panoramic terrace overlooking the 18-hole course\n\n## Course facilities\n- **Practice areas:** driving range, putting green, chipping/pitching green and practice bunkers\n- **Golf Academy:** professional lessons and coaching\n- **Pro Shop:** golf equipment and accessories\n- **Course services:** golf carts, club rental\n- **Dining:** Il Rosmarino restaurant and bar\n- **Fitness & stay:** gym, Golf Resort",
+          "zh": "## 锡耶纳皇家 La Bagnaia 高尔夫\nRoyal Golf La Bagnaia 曾获得 World Golf Awards 2023「意大利最佳高尔夫球场」，2025年其度假酒店还获得「意大利最佳高尔夫酒店」称号。\n\n## Club House 与餐厅\n球场 Club House 内设 Il Rosmarino 餐厅，拥有面向18洞球场的全景露台\n\n## 球场设施\n- **练习场：** Driving Range、Putting Green、Chipping / Pitching Green 及练习沙坑\n- **Golf Academy：** 专业教学与训练\n- **Pro Shop：** 高尔夫球具与用品\n- **球场服务：** Golf Cart、球杆租赁\n- **餐饮设施：** Il Rosmarino 餐厅与酒吧\n- **健身与住宿：** 健身房，Golf Resort"
         }
       },
       {
@@ -158,17 +163,22 @@
         "photos": [
           "assets/courses/toscana/il-pelagone-1.jpg",
           "assets/courses/toscana/il-pelagone-2.jpg",
-          "assets/courses/toscana/il-pelagone-3.jpg"
+          "assets/courses/toscana/il-pelagone-3.jpg",
+          "assets/courses/toscana/il-pelagone-4.jpg",
+          "assets/courses/toscana/il-pelagone-5.jpg",
+          "assets/courses/toscana/il-pelagone-6.jpg",
+          "assets/courses/toscana/il-pelagone-7.jpg",
+          "assets/courses/toscana/il-pelagone-8.jpg"
         ],
         "desc": {
-          "it": "Nel cuore della Maremma, diciotto buche tra boschi e colline che degradano verso la costa.",
-          "en": "In the heart of the Maremma, eighteen holes through woods and hills sloping down to the coast.",
-          "zh": "位于马雷玛腹地，18洞球场穿行于森林与丘陵，一路延伸至海岸。"
+          "it": "Campo da golf resort di 18 buche nel cuore della Maremma toscana, tra le colline di Gavorrano, circondato da uliveti, cipressi e il tipico paesaggio naturale toscano. Disegnato dal designer britannico Keith Preston nel 1999. 18 buche · par 71: il percorso ha un andamento naturale, non particolarmente lungo ma esigente in termini di precisione, scelta delle linee di gioco e lettura dei green. Nel 2003 è stato eletto tra i dieci migliori nuovi campi da golf al mondo di quell'anno.",
+          "en": "An 18-hole resort golf course in the heart of the Tuscan Maremma, among the hills of Gavorrano, surrounded by olive groves, cypresses and typical Tuscan scenery. Designed by British course architect Keith Preston in 1999. 18 holes · par 71: the layout follows the natural terrain and, while not especially long, demands accuracy, smart course management and sharp green-reading. In 2003 it was named among the world's ten best new golf courses of that year.",
+          "zh": "位于托斯卡纳南部 Maremma 地区的18洞度假型高尔夫球场，坐落在 Gavorrano 的丘陵之间，被橄榄树、柏树和典型的托斯卡纳自然景观环绕。球场由英国设计师 Keith Preston 于1999年设计。18洞 · Par 71，球场整体起伏自然，虽然不是特别长，但对击球准确度、线路选择和果岭判断有一定要求。2003年曾被评为当年全球十大最佳新球场之一。"
         },
         "details": {
-          "it": "## Golf Club Toscana · Il Pelagone\nDiciotto buche tra boschi e colline della Maremma, verso il mare.\n\n- **Buche:** 18 · par 72\n- **Hotel:** Golf Hotel Il Pelagone\n- **Natura:** colline e boschi della Maremma\n- **Nei dintorni:** Follonica e la costa",
-          "en": "## Golf Club Toscana · Il Pelagone\nEighteen holes through the woods and hills of the Maremma, towards the sea.\n\n- **Holes:** 18 · par 72\n- **Hotel:** Golf Hotel Il Pelagone\n- **Nature:** hills and woods of the Maremma\n- **Nearby:** Follonica and the coast",
-          "zh": "## 托斯卡纳高尔夫俱乐部 · Il Pelagone\n马雷玛森林与丘陵间的18洞球场，一路通向海岸。\n\n- **球洞：** 18洞 · 标准杆72\n- **酒店：** Il Pelagone 高尔夫酒店\n- **自然：** 马雷玛丘陵与森林\n- **周边：** 福洛尼卡与海岸"
+          "it": "## Golf Club Toscana · Il Pelagone\nNel 2003 è stato eletto tra i dieci migliori nuovi campi da golf al mondo di quell'anno; è stato inoltre sede di tornei internazionali, tra cui il Nick Faldo Series Italy Championship. Il clima mite tutto l'anno rende il campo praticabile in ogni stagione.\n\n## La buca 18 — il momento clou\nL'ultima buca regala una vista sul Mar Tirreno e sull'Isola d'Elba, uno degli scorci più rappresentativi dell'intero percorso.\n\n## Strutture del campo\n- **Aree pratica:** driving range e putting green\n- **Golf Academy:** lezioni e allenamento professionale\n- **Pro Shop:** attrezzatura e accessori da golf\n- **Servizi campo:** golf cart e noleggio bastoni\n- **Ristorazione:** ristorante e bar\n- **Resort:** Il Pelagone Hotel & Golf Resort, 123 camere climatizzate\n- **Benessere:** piscina e Spa\n- **Spiaggia:** spiaggia privata",
+          "en": "## Golf Club Toscana · Il Pelagone\nIn 2003 it was named among the world's ten best new golf courses of that year, and has hosted international tournaments including the Nick Faldo Series Italy Championship. Its mild year-round climate makes the course playable in every season.\n\n## Hole 18 — the standout moment\nThe final hole offers views over the Tyrrhenian Sea and the island of Elba, one of the most iconic vistas on the entire course.\n\n## Course facilities\n- **Practice areas:** driving range and putting green\n- **Golf Academy:** professional lessons and coaching\n- **Pro Shop:** golf equipment and accessories\n- **Course services:** golf carts and club rental\n- **Dining:** restaurant and bar\n- **Resort:** Il Pelagone Hotel & Golf Resort, 123 air-conditioned rooms\n- **Wellness:** swimming pool and spa\n- **Beach:** private beach",
+          "zh": "## 托斯卡纳高尔夫俱乐部 · Il Pelagone\n2003年曾被评为当年全球十大最佳新球场之一，并曾举办多项国际赛事，包括 Nick Faldo Series Italy Championship。全年气候温和，四季皆宜。\n\n## 第18洞 — 球场亮点\n最后一洞可以眺望第勒尼安海和厄尔巴岛（Isola d'Elba），是整个球场非常有代表性的景观之一。\n\n## 球场设施\n- **练习场：** Driving Range、Putting Green\n- **Golf Academy：** 专业教学与训练\n- **Pro Shop：** 高尔夫球具与用品\n- **球场服务：** Golf Cart、球杆租赁\n- **餐饮设施：** 餐厅与酒吧\n- **度假村：** Il Pelagone 高尔夫度假酒店，123间空调客房\n- **休闲设施：** 泳池与Spa\n- **海滩：** 私人海滩"
         }
       },
       {
