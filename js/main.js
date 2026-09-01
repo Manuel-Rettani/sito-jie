@@ -162,6 +162,13 @@
     // Aggiorna i contenuti al cambio lingua
     document.addEventListener("languagechange", function () {
       if (golfActive) {
+        if (tosMap && golfData) {
+          renderGolfMap(golfRegion, tosMap, golfData);
+          if (currentCourse) {
+            var activePin = document.querySelector('.golf-pin[data-id="' + currentCourse.id + '"]');
+            if (activePin) activePin.classList.add("is-active");
+          }
+        }
         if (golfData) renderPackages(golfRegion, golfData);
         if (currentCourse) renderCourseDetails(currentCourse);
       } else if (selectedRegion) {
@@ -316,11 +323,29 @@
       return [ p.offx + (coords[1] - p.lon0) * p.sx, p.offy + (p.lat1 - coords[0]) * p.sy ];
     }
     var color = REGION_COLORS[region] || "#d8b27a";
+    var lang = window.I18N ? window.I18N.getLang() : "it";
     var svg = '<svg class="golf-svg" viewBox="' + map.viewBox + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mappa della Toscana con i campi da golf">';
     svg += '<path class="golf-region" d="' + map.path + '" fill="' + color + '"/>';
+    (map.cities || []).forEach(function (city) {
+      if (!city.coords) return;
+      var xy = project(city.coords);
+      // labelOffset: scostamento puramente grafico (px) SOLO per l'etichetta,
+      // per evitare sovrapposizioni con altri elementi della mappa (es. pin
+      // vicini). Il pallino resta sempre sulla posizione geografica vera.
+      var lxy = city.labelOffset ? [xy[0] + city.labelOffset[0], xy[1] + city.labelOffset[1]] : xy;
+      var name = lget(city.name, lang);
+      svg += '<g class="city-marker" pointer-events="none">' +
+             '<text x="' + lxy[0] + '" y="' + (lxy[1] - 10) + '" text-anchor="middle" class="city-label">' + escapeHtml(name) + '</text>' +
+             '<circle cx="' + xy[0] + '" cy="' + xy[1] + '" r="6"></circle>' +
+             '</g>';
+    });
     courses.forEach(function (c) {
       if (!c.coords) return;
       var xy = project(c.coords);
+      // mapOffset: scostamento puramente grafico (px) per evitare che il pin si
+      // sovrapponga ad altri elementi della mappa. Le coordinate reali del campo
+      // restano invariate.
+      if (c.mapOffset) { xy[0] += c.mapOffset[0]; xy[1] += c.mapOffset[1]; }
       svg += '<g class="golf-pin" data-id="' + escapeHtml(c.id) + '" tabindex="0" role="button" ' +
              'aria-label="' + escapeHtml(c.name) + '" ' +
              'transform="translate(' + (xy[0] - 16) + ',' + (xy[1] - 40) + ')">' +

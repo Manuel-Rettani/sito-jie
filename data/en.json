@@ -1,5 +1,7 @@
 {
-  "meta": { "htmlLang": "en" },
+  "meta": {
+    "htmlLang": "en"
+  },
   "nav": {
     "destinations": "Destinations",
     "experience": "Experience",
@@ -57,10 +59,22 @@
   },
   "guar": {
     "items": {
-      "tee": { "title": "Guaranteed Tee Time", "text": "We book it for you at the club" },
-      "ncc": { "title": "Chauffeur Service", "text": "Private car with driver at your disposal" },
-      "concierge": { "title": "Personal Concierge", "text": "An expert always at your disposal" },
-      "exp": { "title": "Exclusive Experiences", "text": "Wineries, castles and tailor-made itineraries" }
+      "tee": {
+        "title": "Guaranteed Tee Time",
+        "text": "We book it for you at the club"
+      },
+      "ncc": {
+        "title": "Chauffeur Service",
+        "text": "Private car with driver at your disposal"
+      },
+      "concierge": {
+        "title": "Personal Concierge",
+        "text": "An expert always at your disposal"
+      },
+      "exp": {
+        "title": "Exclusive Experiences",
+        "text": "Wineries, castles and tailor-made itineraries"
+      }
     }
   },
   "exp": {

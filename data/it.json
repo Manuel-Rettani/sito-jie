@@ -1,5 +1,7 @@
 {
-  "meta": { "htmlLang": "it" },
+  "meta": {
+    "htmlLang": "it"
+  },
   "nav": {
     "destinations": "Destinazioni",
     "experience": "Esperienza",
@@ -57,10 +59,22 @@
   },
   "guar": {
     "items": {
-      "tee": { "title": "Tee Time Garantito", "text": "Prenotiamo noi al club" },
-      "ncc": { "title": "Servizio NCC", "text": "Auto con autista privato a tua disposizione" },
-      "concierge": { "title": "Personal Concierge", "text": "Un esperto sempre a tua disposizione" },
-      "exp": { "title": "Esperienze Esclusive", "text": "Cantine, castelli e itinerari su misura" }
+      "tee": {
+        "title": "Tee Time Garantito",
+        "text": "Prenotiamo noi al club"
+      },
+      "ncc": {
+        "title": "Servizio NCC",
+        "text": "Auto con autista privato a tua disposizione"
+      },
+      "concierge": {
+        "title": "Personal Concierge",
+        "text": "Un esperto sempre a tua disposizione"
+      },
+      "exp": {
+        "title": "Esperienze Esclusive",
+        "text": "Cantine, castelli e itinerari su misura"
+      }
     }
   },
   "exp": {

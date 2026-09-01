@@ -307,6 +307,12 @@ p { margin: 0; }
 .golf-map { width: 100%; display: flex; justify-content: center; }
 .golf-svg { width: 100%; max-width: 400px; height: auto; filter: drop-shadow(0 14px 30px rgba(15,51,36,0.16)); }
 .golf-region { stroke: #fff; stroke-width: 1; }
+/* segnaposto citta' (es. Firenze): pallino rosso + nome sopra */
+.city-marker circle { fill: var(--it-red); stroke: #fff; stroke-width: 1.6; }
+.city-label {
+  font-family: var(--serif); font-size: 15px; font-weight: 700; fill: var(--green-900);
+  paint-order: stroke; stroke: rgba(255,255,255,0.85); stroke-width: 3px;
+}
 /* pin a pallina da golf: bordo oro su hover / selezionato */
 .golf-pin { cursor: pointer; }
 .golf-pin circle:first-of-type { transition: stroke 0.15s ease, stroke-width 0.15s ease; }

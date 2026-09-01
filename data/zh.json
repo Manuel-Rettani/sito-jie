@@ -1,5 +1,7 @@
 {
-  "meta": { "htmlLang": "zh" },
+  "meta": {
+    "htmlLang": "zh"
+  },
   "nav": {
     "destinations": "目的地",
     "experience": "尊享体验",
@@ -57,10 +59,22 @@
   },
   "guar": {
     "items": {
-      "tee": { "title": "保证开球时间", "text": "由我们代您向球会预订" },
-      "ncc": { "title": "专车服务", "text": "配备专属司机的豪华座驾" },
-      "concierge": { "title": "私人管家", "text": "专属顾问全程为您服务" },
-      "exp": { "title": "专属体验", "text": "酒庄、古堡与量身定制行程" }
+      "tee": {
+        "title": "保证开球时间",
+        "text": "由我们代您向球会预订"
+      },
+      "ncc": {
+        "title": "专车服务",
+        "text": "配备专属司机的豪华座驾"
+      },
+      "concierge": {
+        "title": "私人管家",
+        "text": "专属顾问全程为您服务"
+      },
+      "exp": {
+        "title": "专属体验",
+        "text": "酒庄、古堡与量身定制行程"
+      }
     }
   },
   "exp": {
