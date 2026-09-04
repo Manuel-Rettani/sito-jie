@@ -65,3 +65,6 @@ out/
 
 # claude code
 .claude
+
+# jetbrains
+.idea
