@@ -15,7 +15,7 @@
   },
   "map": {
     "title": "Le nostre destinazioni",
-    "lead": "Esplora l'Italia del golf. Passa sulla mappa e seleziona la Toscana per scoprire i nostri itinerari.",
+    "lead": "Esplora l'Italia del golf. Passa sulla mappa e seleziona una regione evidenziata per scoprire i nostri itinerari.",
     "regions": {
       "valledaosta": "Valle d'Aosta",
       "piemonte": "Piemonte",
@@ -39,22 +39,34 @@
       "sicilia": "Sicilia"
     },
     "panel": {
-      "hint": "Passa sulla mappa per esplorare. Clicca la Toscana per iniziare.",
+      "hint": "Passa sulla mappa per esplorare. Clicca una regione evidenziata per iniziare.",
       "comingSoon": "Presto disponibile",
       "back": "Indietro",
-      "toscanaTitle": "Toscana",
-      "toscanaText": "Colline, vigneti e green leggendari. Golf championship e soggiorni in villa tra Firenze, Chianti e la costa.",
-      "toscanaCta": "Esplora la Toscana"
+      "regions": {
+        "toscana": {
+          "title": "Toscana",
+          "text": "Colline, vigneti e green leggendari. Golf championship e soggiorni in villa tra Firenze, Chianti e la costa.",
+          "cta": "Esplora la Toscana"
+        },
+        "trentino-altoadige": {
+          "title": "Trentino-Alto Adige",
+          "text": "Vette dolomitiche, meleti e green d'altura. Golf in quota e soggiorni tra Bolzano, Merano e le Dolomiti.",
+          "cta": "Esplora il Trentino-Alto Adige"
+        }
+      }
     },
     "golf": {
       "back": "Torna all'Italia",
-      "title": "Campi da golf in Toscana",
       "holes": "buche",
       "pick": "Seleziona un campo sulla mappa per vederne i dettagli.",
       "more": "Scopri di più",
       "packages": "Pacchetti prenotabili",
       "viewProgram": "Vedi il programma",
-      "days": "giorni"
+      "days": "giorni",
+      "titles": {
+        "toscana": "Campi da golf in Toscana",
+        "trentino-altoadige": "Campi da golf in Trentino-Alto Adige"
+      }
     }
   },
   "guar": {

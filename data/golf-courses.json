@@ -238,5 +238,60 @@
         ]
       }
     ]
+  },
+  "trentino-altoadige": {
+    "courses": [
+      {
+        "id": "st-vigil-seis",
+        "name": "Golfclub St. Vigil Seis",
+        "location": "Siusi allo Sciliar (BZ)",
+        "holes": 18,
+        "coords": [
+          46.5335,
+          11.559
+        ],
+        "photos": [
+          "assets/courses/trentino/vigil-1.jpg",
+          "assets/courses/trentino/vigil-2.jpg",
+          "assets/courses/trentino/vigil-3.jpg",
+          "assets/courses/trentino/vigil-4.jpg",
+          "assets/courses/trentino/vigil-5.jpg",
+          "assets/courses/trentino/vigil-6.jpg",
+          "assets/courses/trentino/vigil-7.jpg",
+          "assets/courses/trentino/vigil-8.jpg"
+        ],
+        "photoFit": "contain",
+        "desc": {
+          "it": "Percorso di montagna a 18 buche nel cuore delle Dolomiti. Il campo si trova a circa 850 metri di altitudine, ai piedi dell'altopiano di Siusi, con lo Sciliar sullo sfondo: le buche attraversano prati alpini, boschi, laghetti e ruscelli. Il suo tratto distintivo è vivere un vero golf alpino immersi nel paesaggio delle Dolomiti, Patrimonio Naturale dell'UNESCO.",
+          "en": "An 18-hole mountain course in the heart of the Dolomites. Set at about 850 metres above sea level at the foot of the Alpe di Siusi, with the Sciliar massif as a backdrop, its fairways run through alpine meadows, forests, lakes and streams. Its signature feature is a true alpine golf experience amid the UNESCO World Natural Heritage scenery of the Dolomites.",
+          "zh": "是一座坐落在多洛米蒂心脏地带的18洞山地高尔夫球场。球场位于海拔约850米的 Siusi 高原脚下，以斯齐利亚尔山为背景，球道穿梭于高山草甸、森林、湖泊和溪流之间。这里最大的特色，是能够在世界自然遗产级别的多洛米蒂景观中完成一场真正的阿尔卑斯高尔夫体验。"
+        },
+        "details": {
+          "it": "## Strutture del campo\n- Campo standard a 18 buche\n- Driving range a due livelli\n- Scuola di golf / servizio istruttori\n- Putting green\n- Clubhouse\n- Ristorante R19\n- Golf cart elettrici\n- Noleggio carrelli manuali ed elettrici\n- Pro shop e servizi professionali per il golf",
+          "en": "## Course facilities\n- Standard 18-hole course\n- Two-tier driving range\n- Golf school / coaching service\n- Putting green\n- Clubhouse\n- Restaurant R19\n- Electric golf carts\n- Pull trolley and electric trolley rental\n- Pro shop and professional golf services",
+          "zh": "## 球场设施\n- 18洞标准球场\n- 双层 Driving Range 练习场\n- 高尔夫学校 / 教练服务\n- 练习果岭\n- Clubhouse 会所\n- Restaurant R19 餐厅\n- Golf Cart 电动车\n- 手推车及电动手推车租赁\n- 专业高尔夫用品及服务设施"
+        }
+      }
+    ],
+    "packages": [
+      {
+        "id": "alto-adige-3-2",
+        "name": {
+          "it": "Alto Adige, 3 giorni e 2 notti",
+          "en": "South Tyrol, 3 days and 2 nights",
+          "zh": "上阿迪杰 3天2晚行程"
+        },
+        "summary": {
+          "it": "Bolzano, l'altopiano di Siusi e una giornata di golf ai piedi dello Sciliar, con soggiorno in hotel di montagna.",
+          "en": "Bolzano, the Alpe di Siusi plateau and a day of golf at the foot of the Sciliar, staying in an alpine hotel.",
+          "zh": "博尔扎诺、Siusi 高原与斯齐利亚尔山脚下的一日高尔夫，入住山间精品酒店。"
+        },
+        "program": {
+          "it": "## Giorno 1 — Arrivo a Bolzano\nTrasferimento privato NCC dall'aeroporto e passeggiata nel centro storico.\n- **Hotel:** hotel di montagna a Siusi allo Sciliar\n\n## Giorno 2 — Golf a St. Vigil Seis\n- **Golf:** Golfclub St. Vigil Seis — 18 buche\n- **Pomeriggio:** passeggiata sull'altopiano di Siusi\n\n## Giorno 3 — Partenza\nColazione con vista sulle Dolomiti e transfer privato in aeroporto.",
+          "en": "## Day 1 — Arrival in Bolzano\nPrivate NCC transfer from the airport and a stroll through the old town.\n- **Hotel:** alpine hotel in Siusi allo Sciliar\n\n## Day 2 — Golf at St. Vigil Seis\n- **Golf:** Golfclub St. Vigil Seis — 18 holes\n- **Afternoon:** a walk on the Alpe di Siusi plateau\n\n## Day 3 — Departure\nBreakfast with a view of the Dolomites and private transfer to the airport.",
+          "zh": "## 第1天 — 抵达博尔扎诺\n专车 NCC 机场接送，漫步老城区。\n- **酒店：** Siusi 高原山间酒店\n\n## 第2天 — St. Vigil Seis 高尔夫\n- **高尔夫：** Golfclub St. Vigil Seis — 18洞\n- **下午：** 漫步 Siusi 高原\n\n## 第3天 — 返程\n在多洛米蒂山景中享用早餐，专车送往机场。"
+        }
+      }
+    ]
   }
 }

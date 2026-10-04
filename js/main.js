@@ -4,14 +4,14 @@
    - Selettore lingua, menu mobile, header allo scroll
    - Mappa interattiva delle 20 regioni (render da data/italy-map.json)
      · hover: evidenzia la regione e mostra il nome nel pannello
-     · SOLO la Toscana e' cliccabile -> onRegionClick('toscana')
+     · solo le regioni in ACTIVE_REGIONS sono cliccabili -> onRegionClick(regione)
      · selezione con possibilita' di deselezionare ("Indietro")
    ===================================================================== */
 (function () {
   "use strict";
 
   // Regioni attualmente attive (cliccabili). Aggiungere qui in futuro.
-  var ACTIVE_REGIONS = ["toscana"];
+  var ACTIVE_REGIONS = ["toscana", "trentino-altoadige"];
 
   // Colori pastello per regione (stile mappa di riferimento)
   var REGION_COLORS = {
@@ -26,7 +26,7 @@
   var selectedRegion = null;
 
   // Stato vista campi da golf (mappa statica Toscana)
-  var golfData = null, tosMap = null, golfActive = false, golfRegion = null;
+  var golfData = null, regionMaps = {}, golfActive = false, golfRegion = null;
   var currentCourse = null, galIdx = 0, currentModal = null, modalIdx = 0;
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -132,17 +132,20 @@
           svg.appendChild(label);
         });
 
-        // 3) Pin animato sulla Toscana
-        var tos = data.regions["toscana"];
-        if (tos && tos.c) {
+        // 3) Pin animato su ogni regione attiva
+        ACTIVE_REGIONS.forEach(function (name) {
+          var reg = data.regions[name];
+          if (!reg || !reg.c) return;
           var g = document.createElementNS(SVGNS, "g");
           g.setAttribute("class", "region-pin");
           g.setAttribute("pointer-events", "none");
+          // reg.pin (opzionale) sposta il pin se il nome della regione e' lungo e lo coprirebbe
+          var pin = reg.pin || [reg.c[0], reg.c[1] + 12];
           g.innerHTML =
-            '<circle cx="' + tos.c[0] + '" cy="' + (tos.c[1] + 12) + '" r="5"></circle>' +
-            '<circle cx="' + tos.c[0] + '" cy="' + (tos.c[1] + 12) + '" r="11" class="region-pin-ring"></circle>';
+            '<circle cx="' + pin[0] + '" cy="' + pin[1] + '" r="5"></circle>' +
+            '<circle cx="' + pin[0] + '" cy="' + pin[1] + '" r="11" class="region-pin-ring"></circle>';
           svg.appendChild(g);
-        }
+        });
       })
       .catch(function (e) { console.error("[map] caricamento fallito:", e); });
 
@@ -167,8 +170,9 @@
     // Aggiorna i contenuti al cambio lingua
     document.addEventListener("languagechange", function () {
       if (golfActive) {
-        if (tosMap && golfData) {
-          renderGolfMap(golfRegion, tosMap, golfData);
+        if (regionMaps[golfRegion] && golfData) {
+          setGolfTitle(golfRegion);
+          renderGolfMap(golfRegion, regionMaps[golfRegion], golfData);
           if (currentCourse) {
             var activePin = document.querySelector('.golf-pin[data-id="' + currentCourse.id + '"]');
             if (activePin) activePin.classList.add("is-active");
@@ -210,15 +214,13 @@
      (es. apertura pagina dedicata). Per ora seleziona e mostra il pannello.
      =================================================================== */
   function onRegionClick(region) {
-    switch (region) {
-      case "toscana":
-        // La mappa passa alla vista regionale con i campi da golf.
-        selectRegion("toscana");
-        showGolfView("toscana");
-        break;
-      default:
-        console.log("[onRegionClick] Regione non attiva:", region);
+    if (ACTIVE_REGIONS.indexOf(region) === -1) {
+      console.log("[onRegionClick] Regione non attiva:", region);
+      return;
     }
+    // La mappa passa alla vista regionale con i campi da golf.
+    selectRegion(region);
+    showGolfView(region);
   }
 
   /* Seleziona/evidenzia una regione sulla mappa */
@@ -258,37 +260,47 @@
       '<h3 class="map-panel-title">' + escapeHtml(t("map.regions." + region)) + '</h3>';
   }
 
-  /* Pannello: dettagli regione selezionata (Toscana) + pulsante Indietro */
+  /* Pannello: dettagli regione selezionata + pulsante Indietro */
   function renderRegionPanel(region) {
     var panel = document.getElementById("mapPanel");
     if (!panel || !window.I18N) return;
     var t = window.I18N.t;
-    if (region === "toscana") {
-      panel.setAttribute("data-region", "toscana");
+    if (ACTIVE_REGIONS.indexOf(region) !== -1) {
+      var key = "map.panel.regions." + region;
+      panel.setAttribute("data-region", region);
       panel.innerHTML =
         '<button type="button" class="map-panel-back" id="mapBack">&larr; ' + escapeHtml(t("map.panel.back")) + '</button>' +
-        '<span class="map-panel-tag">' + escapeHtml(t("map.regions.toscana")) + '</span>' +
-        '<h3 class="map-panel-title">' + escapeHtml(t("map.panel.toscanaTitle")) + '</h3>' +
-        '<p class="map-panel-text">' + escapeHtml(t("map.panel.toscanaText")) + '</p>' +
-        '<a href="#contact" class="btn btn-outline map-panel-cta">' + escapeHtml(t("map.panel.toscanaCta")) + '</a>';
+        '<span class="map-panel-tag">' + escapeHtml(t("map.regions." + region)) + '</span>' +
+        '<h3 class="map-panel-title">' + escapeHtml(t(key + ".title")) + '</h3>' +
+        '<p class="map-panel-text">' + escapeHtml(t(key + ".text")) + '</p>' +
+        '<a href="#contact" class="btn btn-outline map-panel-cta">' + escapeHtml(t(key + ".cta")) + '</a>';
       var back = document.getElementById("mapBack");
       if (back) back.addEventListener("click", deselectRegion);
     }
   }
 
   /* ===================================================================
-     VISTA CAMPI DA GOLF — immagine statica della regione (Toscana) con i pin.
-     Dati: data/golf-courses.json (campi) + data/toscana-map.json (geometria).
+     VISTA CAMPI DA GOLF — immagine statica della regione con i pin.
+     Dati: data/golf-courses.json (campi, per regione) + data/<regione>-map.json (geometria).
      =================================================================== */
   function loadGolfData() {
     if (golfData) return Promise.resolve(golfData);
     return fetch("data/golf-courses.json").then(function (r) { return r.json(); })
       .then(function (d) { golfData = d; return d; });
   }
-  function loadTosMap() {
-    if (tosMap) return Promise.resolve(tosMap);
-    return fetch("data/toscana-map.json").then(function (r) { return r.json(); })
-      .then(function (d) { tosMap = d; return d; });
+  function loadRegionMap(region) {
+    if (regionMaps[region]) return Promise.resolve(regionMaps[region]);
+    return fetch("data/" + region + "-map.json").then(function (r) { return r.json(); })
+      .then(function (d) { regionMaps[region] = d; return d; });
+  }
+
+  // Titolo della vista regionale (cambia per regione e lingua)
+  function setGolfTitle(region) {
+    var el = document.getElementById("golfTitle");
+    if (!el) return;
+    var key = "map.golf.titles." + region;
+    el.setAttribute("data-i18n", key);
+    if (window.I18N) el.textContent = window.I18N.t(key);
   }
 
   // Pallina da golf su tee rosso (ispirata all'icona fornita: pallina bianca
@@ -307,14 +319,24 @@
       dimples;
   }
 
+  // Pannello campo: torna al messaggio iniziale (nessun campo selezionato)
+  function resetGolfPanel() {
+    var panel = document.getElementById("golfPanel");
+    if (!panel) return;
+    var t = window.I18N ? window.I18N.t : function (k) { return k; };
+    panel.innerHTML = '<p class="golf-panel-hint" data-i18n="map.golf.pick">' + escapeHtml(t("map.golf.pick")) + '</p>';
+  }
+
   function showGolfView(region) {
     var wrapper = document.getElementById("mapWrapper");
     var view = document.getElementById("golfView");
     if (!wrapper || !view) return;
-    golfActive = true; golfRegion = region; currentCourse = null;
+    golfActive = true; golfRegion = region; currentCourse = null; galIdx = 0;
+    resetGolfPanel();
     wrapper.classList.add("golf-active");
     view.hidden = false;
-    Promise.all([loadTosMap(), loadGolfData()])
+    setGolfTitle(region);
+    Promise.all([loadRegionMap(region), loadGolfData()])
       .then(function (res) { renderGolfMap(region, res[0], res[1]); renderPackages(region, res[1]); })
       .catch(function (e) { console.error("[golf] caricamento fallito:", e); backToItaly(); renderRegionPanel(region); });
   }
@@ -329,7 +351,7 @@
     }
     var color = REGION_COLORS[region] || "#d8b27a";
     var lang = window.I18N ? window.I18N.getLang() : "it";
-    var svg = '<svg class="golf-svg" viewBox="' + map.viewBox + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mappa della Toscana con i campi da golf">';
+    var svg = '<svg class="golf-svg" viewBox="' + map.viewBox + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + escapeHtml(window.I18N ? window.I18N.t("map.regions." + region) : region) + '">';
     svg += '<path class="golf-region" d="' + map.path + '" fill="' + color + '"/>';
     (map.cities || []).forEach(function (city) {
       if (!city.coords) return;
@@ -406,7 +428,10 @@
 
     var gallery = "";
     if (photos.length) {
-      gallery = '<div class="golf-gallery">' +
+      // photoFit (opzionale, per campo): "contain" = foto mai ritagliate, con sfondo sfocato
+      var contain = course.photoFit === "contain";
+      gallery = '<div class="golf-gallery' + (contain ? ' golf-gallery--contain' : '') + '">' +
+        (contain ? '<img class="golf-gallery-bg" id="golfBg" src="' + escapeHtml(photos[galIdx]) + '" alt="" aria-hidden="true">' : '') +
         '<img class="golf-gallery-img" id="golfImg" src="' + escapeHtml(photos[galIdx]) + '" alt="' + escapeHtml(course.name) + '" onerror="this.classList.add(\'is-broken\')">';
       if (photos.length > 1) {
         gallery +=
@@ -438,6 +463,8 @@
         galIdx = (i + photos.length) % photos.length;
         img.classList.remove("is-broken");
         img.src = photos[galIdx];
+        var bg = document.getElementById("golfBg");
+        if (bg) bg.src = photos[galIdx];
         count.textContent = (galIdx + 1) + " / " + photos.length;
       }
       document.getElementById("golfPrev").addEventListener("click", function () { show(galIdx - 1); });

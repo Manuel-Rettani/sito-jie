@@ -12,9 +12,19 @@
   "cities": [
     {
       "id": "firenze",
-      "name": { "it": "Firenze", "en": "Florence", "zh": "佛罗伦萨" },
-      "coords": [43.7696, 11.2558],
-      "labelOffset": [0, -14]
+      "name": {
+        "it": "Firenze",
+        "en": "Florence",
+        "zh": "佛罗伦萨"
+      },
+      "coords": [
+        43.7696,
+        11.2558
+      ],
+      "labelOffset": [
+        0,
+        -14
+      ]
     }
   ]
 }

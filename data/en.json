@@ -15,7 +15,7 @@
   },
   "map": {
     "title": "Our destinations",
-    "lead": "Explore golf in Italy. Hover over the map and select Tuscany to discover our itineraries.",
+    "lead": "Explore golf in Italy. Hover over the map and select a highlighted region to discover our itineraries.",
     "regions": {
       "valledaosta": "Aosta Valley",
       "piemonte": "Piedmont",
@@ -39,22 +39,34 @@
       "sicilia": "Sicily"
     },
     "panel": {
-      "hint": "Hover over the map to explore. Click Tuscany to get started.",
+      "hint": "Hover over the map to explore. Click a highlighted region to get started.",
       "comingSoon": "Coming soon",
       "back": "Back",
-      "toscanaTitle": "Tuscany",
-      "toscanaText": "Hills, vineyards and legendary greens. Championship golf and villa stays between Florence, Chianti and the coast.",
-      "toscanaCta": "Explore Tuscany"
+      "regions": {
+        "toscana": {
+          "title": "Tuscany",
+          "text": "Hills, vineyards and legendary greens. Championship golf and villa stays between Florence, Chianti and the coast.",
+          "cta": "Explore Tuscany"
+        },
+        "trentino-altoadige": {
+          "title": "Trentino-Alto Adige",
+          "text": "Dolomite peaks, apple orchards and alpine greens. High-altitude golf and stays between Bolzano, Merano and the Dolomites.",
+          "cta": "Explore Trentino-Alto Adige"
+        }
+      }
     },
     "golf": {
       "back": "Back to Italy",
-      "title": "Golf courses in Tuscany",
       "holes": "holes",
       "pick": "Select a course on the map to see its details.",
       "more": "Learn more",
       "packages": "Bookable packages",
       "viewProgram": "View the itinerary",
-      "days": "days"
+      "days": "days",
+      "titles": {
+        "toscana": "Golf courses in Tuscany",
+        "trentino-altoadige": "Golf courses in Trentino-Alto Adige"
+      }
     }
   },
   "guar": {
