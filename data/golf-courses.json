@@ -10,7 +10,10 @@
           43.6836,
           11.2806
         ],
-        "mapOffset": [0, 32],
+        "mapOffset": [
+          0,
+          32
+        ],
         "photos": [
           "assets/courses/toscana/ugolino-1.jpg",
           "assets/courses/toscana/ugolino-2.jpg",
@@ -40,7 +43,7 @@
         "holes": 18,
         "coords": [
           43.9186,
-          11.0660
+          11.066
         ],
         "photos": [
           "assets/courses/toscana/le-pavoniere-1.jpg",
@@ -129,7 +132,7 @@
         "holes": 18,
         "coords": [
           43.2436,
-          11.3780
+          11.378
         ],
         "photos": [
           "assets/courses/toscana/la-bagnaia-1.jpg",
@@ -158,8 +161,8 @@
         "location": "Gavorrano (GR)",
         "holes": 18,
         "coords": [
-          42.9230,
-          10.9960
+          42.923,
+          10.996
         ],
         "photos": [
           "assets/courses/toscana/il-pelagone-1.jpg",
@@ -189,7 +192,7 @@
         "holes": 9,
         "coords": [
           43.7615,
-          10.9220
+          10.922
         ],
         "photos": [
           "assets/courses/toscana/vinci-1.jpg",
@@ -214,61 +217,25 @@
     ],
     "packages": [
       {
-        "id": "firenze-chianti",
-        "days": 5,
+        "id": "toscana-4-3",
         "name": {
-          "it": "Firenze & Chianti · Signature",
-          "en": "Florence & Chianti · Signature",
-          "zh": "佛罗伦萨与基安蒂 · 臻选之旅"
+          "it": "Toscana, 4 giorni e 3 notti",
+          "en": "Tuscany, 4 days and 3 nights",
+          "zh": "托斯卡纳 4天3晚行程"
         },
         "summary": {
-          "it": "5 giorni tra i green di Firenze e le cantine del Chianti, con dimore d'eccezione.",
-          "en": "5 days between the greens of Florence and the wineries of Chianti, with exceptional residences.",
-          "zh": "5天畅游佛罗伦萨球场与基安蒂酒庄，入住顶级庄园。"
+          "it": "Firenze, Pisa e due giornate di golf tra l'Ugolino e Punta Ala, con ville storiche, resort sul mare e transfer privato NCC.",
+          "en": "Florence, Pisa and two golf days between Ugolino and Punta Ala, with historic villas, a seaside resort and private NCC transfers.",
+          "zh": "佛罗伦萨、比萨与两场高尔夫（Ugolino 与 Punta Ala），入住历史庄园与海滨度假酒店，全程私人 NCC 商务车。"
         },
-        "program": {
-          "it": "## Giorno 1 — Arrivo a Firenze\nTrasferimento privato dall'aeroporto e check-in.\n- **Hotel:** Belmond Villa San Michele, Fiesole\n- **Sera:** cena di benvenuto con vini toscani\n\n## Giorno 2 — Golf all'Ugolino\n- **Golf:** Golf Club dell'Ugolino — 18 buche\n- **Hotel:** Belmond Villa San Michele, Fiesole\n\n## Giorno 3 — Nel cuore del Chianti\n- **Golf:** Golf Club Le Pavoniere, Prato\n- **Hotel:** COMO Castello Del Nero, Tavarnelle\n- **Pomeriggio:** degustazione in cantina\n\n## Giorno 4 — Siena e Val d'Orcia\n- **Golf:** Royal Golf La Bagnaia, Siena\n- **Hotel:** COMO Castello Del Nero, Tavarnelle\n\n## Giorno 5 — Partenza\nMattinata libera a Firenze e trasferimento privato in aeroporto.",
-          "en": "## Day 1 — Arrival in Florence\nPrivate transfer from the airport and check-in.\n- **Hotel:** Belmond Villa San Michele, Fiesole\n- **Evening:** welcome dinner with Tuscan wines\n\n## Day 2 — Golf at Ugolino\n- **Golf:** Golf Club dell'Ugolino — 18 holes\n- **Hotel:** Belmond Villa San Michele, Fiesole\n\n## Day 3 — In the heart of Chianti\n- **Golf:** Golf Club Le Pavoniere, Prato\n- **Hotel:** COMO Castello Del Nero, Tavarnelle\n- **Afternoon:** winery tasting\n\n## Day 4 — Siena and Val d'Orcia\n- **Golf:** Royal Golf La Bagnaia, Siena\n- **Hotel:** COMO Castello Del Nero, Tavarnelle\n\n## Day 5 — Departure\nFree morning in Florence and private transfer to the airport.",
-          "zh": "## 第1天 — 抵达佛罗伦萨\n专车从机场接送并办理入住。\n- **酒店：** 美憬阁圣米歇尔别墅（菲耶索莱）\n- **晚间：** 托斯卡纳美酒欢迎晚宴\n\n## 第2天 — 乌戈利诺高尔夫\n- **高尔夫：** 乌戈利诺高尔夫俱乐部 — 18洞\n- **酒店：** 美憬阁圣米歇尔别墅\n\n## 第3天 — 基安蒂腹地\n- **高尔夫：** 普拉托 Le Pavoniere 高尔夫俱乐部\n- **酒店：** COMO Castello Del Nero（塔瓦尔内莱）\n- **下午：** 酒庄品鉴\n\n## 第4天 — 锡耶纳与奥尔恰谷\n- **高尔夫：** 锡耶纳皇家 La Bagnaia 高尔夫\n- **酒店：** COMO Castello Del Nero\n\n## 第5天 — 返程\n上午佛罗伦萨自由活动，专车送往机场。"
-        }
-      },
-      {
-        "id": "maremma-costa",
-        "days": 4,
-        "name": {
-          "it": "Maremma & Costa",
-          "en": "Maremma & Coast",
-          "zh": "马雷玛海岸之旅"
-        },
-        "summary": {
-          "it": "4 giorni di golf sul mare, tra Punta Ala, Gavorrano e l'Argentario.",
-          "en": "4 days of seaside golf, between Punta Ala, Gavorrano and the Argentario.",
-          "zh": "4天海滨高尔夫，畅游蓬塔阿拉、加沃拉诺与阿真塔里奥。"
-        },
-        "program": {
-          "it": "## Giorno 1 — Arrivo in Maremma\nTrasferimento privato e check-in nel resort.\n- **Hotel:** L'Andana, Castiglione della Pescaia\n\n## Giorno 2 — Golf a Punta Ala\n- **Golf:** Golf Club Punta Ala — 18 buche\n- **Hotel:** L'Andana, Castiglione della Pescaia\n\n## Giorno 3 — Il Pelagone\n- **Golf:** Golf Club Toscana · Il Pelagone, Gavorrano\n- **Hotel:** L'Andana, Castiglione della Pescaia\n\n## Giorno 4 — Argentario e partenza\n- **Golf:** Argentario Golf Club, Porto Ercole\n- Trasferimento privato in aeroporto",
-          "en": "## Day 1 — Arrival in Maremma\nPrivate transfer and check-in at the resort.\n- **Hotel:** L'Andana, Castiglione della Pescaia\n\n## Day 2 — Golf at Punta Ala\n- **Golf:** Golf Club Punta Ala — 18 holes\n- **Hotel:** L'Andana, Castiglione della Pescaia\n\n## Day 3 — Il Pelagone\n- **Golf:** Golf Club Toscana · Il Pelagone, Gavorrano\n- **Hotel:** L'Andana, Castiglione della Pescaia\n\n## Day 4 — Argentario and departure\n- **Golf:** Argentario Golf Club, Porto Ercole\n- Private transfer to the airport",
-          "zh": "## 第1天 — 抵达马雷玛\n专车接送并办理度假村入住。\n- **酒店：** L'Andana（卡斯蒂利奥内-德拉佩斯卡亚）\n\n## 第2天 — 蓬塔阿拉高尔夫\n- **高尔夫：** 蓬塔阿拉高尔夫俱乐部 — 18洞\n- **酒店：** L'Andana\n\n## 第3天 — Il Pelagone\n- **高尔夫：** 托斯卡纳高尔夫俱乐部 · Il Pelagone（加沃拉诺）\n- **酒店：** L'Andana\n\n## 第4天 — 阿真塔里奥与返程\n- **高尔夫：** 阿真塔里奥高尔夫俱乐部（波尔托埃尔科莱）\n- 专车送往机场"
-        }
-      },
-      {
-        "id": "siena-vino",
-        "days": 3,
-        "name": {
-          "it": "Siena & Vino",
-          "en": "Siena & Wine",
-          "zh": "锡耶纳美酒之旅"
-        },
-        "summary": {
-          "it": "3 giorni tra colline senesi, golf championship e Brunello di Montalcino.",
-          "en": "3 days between the Sienese hills, championship golf and Brunello di Montalcino.",
-          "zh": "3天畅游锡耶纳丘陵，锦标级高尔夫与蒙塔尔奇诺布鲁奈罗美酒。"
-        },
-        "program": {
-          "it": "## Giorno 1 — Arrivo a Siena\nTrasferimento privato e check-in.\n- **Hotel:** Rosewood Castiglion del Bosco, Montalcino\n\n## Giorno 2 — Golf a La Bagnaia\n- **Golf:** Royal Golf La Bagnaia — 18 buche\n- **Hotel:** Rosewood Castiglion del Bosco, Montalcino\n\n## Giorno 3 — Brunello e partenza\n- **Mattina:** degustazione di Brunello di Montalcino\n- Trasferimento privato in aeroporto",
-          "en": "## Day 1 — Arrival in Siena\nPrivate transfer and check-in.\n- **Hotel:** Rosewood Castiglion del Bosco, Montalcino\n\n## Day 2 — Golf at La Bagnaia\n- **Golf:** Royal Golf La Bagnaia — 18 holes\n- **Hotel:** Rosewood Castiglion del Bosco, Montalcino\n\n## Day 3 — Brunello and departure\n- **Morning:** Brunello di Montalcino wine tasting\n- Private transfer to the airport",
-          "zh": "## 第1天 — 抵达锡耶纳\n专车接送并办理入住。\n- **酒店：** 瑰丽 Castiglion del Bosco（蒙塔尔奇诺）\n\n## 第2天 — La Bagnaia 高尔夫\n- **高尔夫：** 锡耶纳皇家 La Bagnaia — 18洞\n- **酒店：** 瑰丽 Castiglion del Bosco\n\n## 第3天 — 布鲁奈罗与返程\n- **上午：** 蒙塔尔奇诺布鲁奈罗美酒品鉴\n- 专车送往机场"
-        }
+        "images": [
+          "assets/packages/toscana/1/1.jpeg",
+          "assets/packages/toscana/1/2.jpeg",
+          "assets/packages/toscana/1/3.jpeg",
+          "assets/packages/toscana/1/4.jpeg",
+          "assets/packages/toscana/1/5.jpeg",
+          "assets/packages/toscana/1/6.jpeg"
+        ]
       }
     ]
   }

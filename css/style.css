@@ -327,7 +327,7 @@ p { margin: 0; }
   border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; min-height: 150px;
 }
 .golf-panel-hint { color: var(--muted); font-style: italic; padding: 46px 30px; text-align: center; }
-.golf-gallery { position: relative; width: 100%; aspect-ratio: 16 / 10; background: var(--green-900); overflow: hidden; }
+.golf-gallery { position: relative; width: 100%; aspect-ratio: 16 / 10; background: var(--green-900); overflow: hidden; touch-action: pan-y; }
 .golf-gallery-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s ease; }
 .golf-gallery-img.is-broken { opacity: 0; }
 .golf-gal-nav {
@@ -371,10 +371,11 @@ p { margin: 0; }
   text-align: center; margin: 0 0 28px;
 }
 .pkg2-grid {
-  display: grid; grid-template-columns: 1fr; gap: 22px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 22px;
   max-width: 980px; margin: 0 auto;
 }
 .pkg2-card {
+  flex: 1 1 100%;
   text-align: left; background: #fff; border: 1px solid var(--line);
   border-radius: var(--radius); padding: 26px 26px 24px; cursor: pointer;
   font-family: inherit; position: relative; overflow: hidden;
@@ -392,7 +393,7 @@ p { margin: 0; }
 .pkg2-name { font-family: var(--serif); font-size: 1.35rem; color: var(--green-900); margin: 0 0 8px; }
 .pkg2-summary { color: var(--muted); font-weight: 300; margin: 0 0 16px; line-height: 1.55; }
 .pkg2-cta { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-700); font-weight: 500; }
-@media (min-width: 720px) { .pkg2-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 720px) { .pkg2-card { flex: 0 1 calc((100% - 44px) / 3); } }
 
 /* ---- Modale programma pacchetto ---- */
 body.modal-open { overflow: hidden; }
@@ -416,6 +417,44 @@ body.modal-open { overflow: hidden; }
   color: var(--green-900); margin: 0 0 8px; padding-right: 40px;
 }
 .modal-title::after { content: ""; display: block; width: 60px; height: 2px; background: var(--gold); margin-top: 14px; }
+/* variante con galleria di immagini (programma illustrato) */
+.modal-dialog--gallery { width: min(640px, 100%); padding: 28px clamp(16px, 4vw, 32px) 24px; }
+.modal-dialog--gallery .modal-title { font-size: clamp(1.3rem, 3.5vw, 1.7rem); }
+.modal-gallery {
+  position: relative; margin: 20px auto 0; background: var(--green-900);
+  aspect-ratio: 4 / 5; border-radius: 4px; overflow: hidden;
+  width: min(100%, calc((88vh - 140px) * 0.8));
+  touch-action: pan-y;
+}
+.modal-gallery-img { width: 100%; height: 100%; object-fit: contain; display: block; cursor: zoom-in; }
+.modal-gal-full {
+  position: absolute; top: 10px; right: 10px; width: 38px; height: 38px; border-radius: 50%;
+  border: none; background: rgba(255,255,255,0.85); color: var(--green-900); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;
+}
+.modal-gal-full:hover { background: #fff; }
+.modal-gal-full svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* ---- Immagine a schermo intero ---- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 300; background: rgba(8,20,14,0.96);
+  display: flex; align-items: center; justify-content: center; touch-action: pan-y;
+}
+.lightbox[hidden] { display: none; }
+.lightbox-img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; user-select: none; -webkit-user-select: none; }
+.lightbox .golf-gal-nav { width: 46px; height: 46px; z-index: 1; }
+.lightbox .golf-gal-prev { left: 18px; } .lightbox .golf-gal-next { right: 18px; }
+.lightbox .golf-gal-count { bottom: 18px; right: auto; left: 50%; transform: translateX(-50%); }
+.lightbox-close {
+  position: absolute; top: 14px; right: 16px; width: 44px; height: 44px; z-index: 1;
+  background: rgba(255,255,255,0.85); border: none; border-radius: 50%;
+  font-size: 1.8rem; line-height: 1; color: var(--green-900); cursor: pointer;
+}
+.lightbox-close:hover { background: #fff; }
+/* Mobile / touch: niente frecce, si scorre con lo swipe */
+@media (max-width: 719px), (hover: none) and (pointer: coarse) {
+  .golf-gallery .golf-gal-nav, .modal-gallery .golf-gal-nav, .lightbox .golf-gal-nav { display: none; }
+}
 /* markdown del programma */
 .modal-md { margin-top: 22px; color: var(--ink); }
 .modal-md .md-h {

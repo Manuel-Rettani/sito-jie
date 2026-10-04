@@ -27,7 +27,7 @@
 
   // Stato vista campi da golf (mappa statica Toscana)
   var golfData = null, tosMap = null, golfActive = false, golfRegion = null;
-  var currentCourse = null, galIdx = 0, currentModal = null;
+  var currentCourse = null, galIdx = 0, currentModal = null, modalIdx = 0;
 
   document.addEventListener("DOMContentLoaded", function () {
     var yearEl = document.getElementById("year");
@@ -151,13 +151,18 @@
     if (golfBack) golfBack.addEventListener("click", backToItaly);
 
     // Modale programma pacchetto: chiusura con X, click sullo sfondo, ESC
+    initLightbox();
     var modalClose = document.getElementById("pkgModalClose");
     if (modalClose) modalClose.addEventListener("click", closeModal);
     var pkgModal = document.getElementById("pkgModal");
     if (pkgModal) pkgModal.addEventListener("click", function (e) {
       if (e.target === pkgModal || e.target.hasAttribute("data-close")) closeModal();
     });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { if (!closeLightbox()) closeModal(); }
+      else if (e.key === "ArrowLeft") stepModalImage(-1);
+      else if (e.key === "ArrowRight") stepModalImage(1);
+    });
 
     // Aggiorna i contenuti al cambio lingua
     document.addEventListener("languagechange", function () {
@@ -437,6 +442,15 @@
       }
       document.getElementById("golfPrev").addEventListener("click", function () { show(galIdx - 1); });
       document.getElementById("golfNext").addEventListener("click", function () { show(galIdx + 1); });
+      // swipe orizzontale su touch (sui telefoni le frecce sono nascoste)
+      var gal = img.parentNode, x0 = null;
+      gal.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      gal.addEventListener("touchend", function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        x0 = null;
+        if (Math.abs(dx) > 40) show(galIdx + (dx < 0 ? 1 : -1));
+      });
     }
   }
 
@@ -485,7 +499,7 @@
     var pkgs = (golfData && golfData[golfRegion] && golfData[golfRegion].packages) || [];
     var p = pkgs.filter(function (x) { return x.id === id; })[0];
     if (!p) return;
-    openModal(p.name, p.program);
+    openModal(p.name, p.program, p.images);
   }
 
   // Apre la modale con i dettagli di un campo (markdown)
@@ -494,9 +508,11 @@
     openModal(course.name, course.details);
   }
 
-  // Modale generica: name = stringa o {it,zh}; body = {it,zh} markdown
-  function openModal(name, body) {
-    currentModal = { name: name, body: body };
+  // Modale generica: name = stringa o {it,en,zh}; body = {it,en,zh} markdown;
+  // images (opzionale) = elenco di immagini del programma, mostrate come galleria scorrevole
+  function openModal(name, body, images) {
+    currentModal = { name: name, body: body, images: images || [] };
+    modalIdx = 0;
     renderModalContent();
     var modal = document.getElementById("pkgModal");
     if (!modal) return;
@@ -512,15 +528,108 @@
     if (!content || !currentModal) return;
     var lang = window.I18N ? window.I18N.getLang() : "it";
     var name = (typeof currentModal.name === "string") ? currentModal.name : lget(currentModal.name, lang);
+    var dialog = content.parentNode;
+    var images = currentModal.images;
+    dialog.classList.toggle("modal-dialog--gallery", images.length > 0);
+    var html = '<h3 class="modal-title">' + escapeHtml(name) + '</h3>';
+    if (images.length) {
+      html += '<div class="modal-gallery" id="modalGallery">' +
+        '<img class="modal-gallery-img" id="modalImg" src="' + escapeHtml(images[modalIdx]) + '" alt="' +
+          escapeHtml(name) + ' — ' + (modalIdx + 1) + '">' +
+        '<button type="button" class="modal-gal-full" id="modalFull" aria-label="Fullscreen">' +
+          '<svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>';
+      if (images.length > 1) {
+        html +=
+          '<button type="button" class="golf-gal-nav golf-gal-prev" id="modalPrev" aria-label="Previous">&lsaquo;</button>' +
+          '<button type="button" class="golf-gal-nav golf-gal-next" id="modalNext" aria-label="Next">&rsaquo;</button>' +
+          '<span class="golf-gal-count" id="modalCount">' + (modalIdx + 1) + ' / ' + images.length + '</span>';
+      }
+      html += '</div>';
+    }
     var md = lget(currentModal.body, lang);
-    content.innerHTML =
-      '<h3 class="modal-title">' + escapeHtml(name) + '</h3>' +
-      '<div class="modal-md">' + mdToHtml(md) + '</div>';
+    if (md) html += '<div class="modal-md">' + mdToHtml(md) + '</div>';
+    content.innerHTML = html;
+
+    if (images.length) {
+      document.getElementById("modalFull").addEventListener("click", openLightbox);
+      document.getElementById("modalImg").addEventListener("click", openLightbox);
+    }
+    if (images.length > 1) {
+      document.getElementById("modalPrev").addEventListener("click", function () { stepModalImage(-1); });
+      document.getElementById("modalNext").addEventListener("click", function () { stepModalImage(1); });
+      // swipe orizzontale su touch
+      var gal = document.getElementById("modalGallery"), x0 = null;
+      gal.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      gal.addEventListener("touchend", function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        x0 = null;
+        if (Math.abs(dx) > 40) stepModalImage(dx < 0 ? 1 : -1);
+      });
+    }
+  }
+
+  function stepModalImage(delta) {
+    if (!currentModal || !currentModal.images || currentModal.images.length < 2) return;
+    var images = currentModal.images;
+    modalIdx = (modalIdx + delta + images.length) % images.length;
+    var img = document.getElementById("modalImg");
+    var count = document.getElementById("modalCount");
+    if (!img) return;
+    img.src = images[modalIdx];
+    img.alt = img.alt.replace(/\d+$/, modalIdx + 1);
+    if (count) count.textContent = (modalIdx + 1) + " / " + images.length;
+    var box = document.getElementById("lightbox");
+    if (box && !box.hidden) updateLightbox();
+  }
+
+  // Immagine a schermo intero (condivide l'indice modalIdx con la galleria della modale)
+  function updateLightbox() {
+    var images = currentModal.images, multi = images.length > 1;
+    var img = document.getElementById("lightboxImg");
+    img.src = images[modalIdx];
+    img.alt = document.getElementById("modalImg").alt;
+    document.getElementById("lightboxCount").textContent = multi ? (modalIdx + 1) + " / " + images.length : "";
+    document.getElementById("lightboxPrev").hidden = !multi;
+    document.getElementById("lightboxNext").hidden = !multi;
+  }
+
+  function openLightbox() {
+    if (!currentModal || !currentModal.images.length) return;
+    updateLightbox();
+    document.getElementById("lightbox").hidden = false;
+    document.getElementById("lightboxClose").focus();
+  }
+
+  // Ritorna true se era aperto (cosi' ESC chiude prima lui e poi la modale)
+  function closeLightbox() {
+    var box = document.getElementById("lightbox");
+    if (!box || box.hidden) return false;
+    box.hidden = true;
+    return true;
+  }
+
+  function initLightbox() {
+    var box = document.getElementById("lightbox");
+    if (!box) return;
+    document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+    document.getElementById("lightboxPrev").addEventListener("click", function () { stepModalImage(-1); });
+    document.getElementById("lightboxNext").addEventListener("click", function () { stepModalImage(1); });
+    box.addEventListener("click", function (e) { if (e.target === box) closeLightbox(); });
+    var x0 = null;
+    box.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      x0 = null;
+      if (Math.abs(dx) > 40) stepModalImage(dx < 0 ? 1 : -1);
+    });
   }
 
   function closeModal() {
     var modal = document.getElementById("pkgModal");
     if (!modal || modal.hidden) return;
+    closeLightbox();
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
