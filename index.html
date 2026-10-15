@@ -7,6 +7,10 @@
   <meta name="description" content="Yi Gao Fei — Luxury golf travel in Italy. Pacchetti golf e soggiorni di lusso in Toscana e oltre." />
 
   <!-- Tipografia self-hosted (nessuna dipendenza esterna, accessibile dalla Cina) -->
+  <link rel="preload" href="assets/fonts/cormorant-600.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/cormorant-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/logo-transparent.webp" as="image" type="image/webp" />
+  <link rel="preload" href="data/italy-map.json" as="fetch" crossorigin />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -18,7 +22,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="#hero" class="brand" aria-label="Yi Gao Fei">
-        <img src="assets/logo-transparent.png" alt="Yi Gao Fei — Italy Golf Concierge" class="brand-logo" />
+        <img src="assets/logo-transparent.webp" alt="Yi Gao Fei — Italy Golf Concierge" class="brand-logo" width="760" height="449" />
       </a>
 
       <!-- Navigazione -->
@@ -47,7 +51,7 @@
   <section class="hero" id="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content container">
-      <img src="assets/logo-transparent.png" alt="Yi Gao Fei — Italy Golf Concierge" class="hero-logo" />
+      <img src="assets/logo-transparent.webp" alt="Yi Gao Fei — Italy Golf Concierge" class="hero-logo" width="760" height="449" fetchpriority="high" />
       <h1 class="hero-title" data-i18n="hero.title">Il golf incontra il lusso italiano</h1>
       <p class="hero-sub" data-i18n="hero.subtitle">Campi leggendari, dimore esclusive, esperienze su misura.</p>
       <a href="#map" class="btn btn-gold" data-i18n="hero.cta">Scopri le destinazioni</a>
@@ -175,7 +179,7 @@
         <!-- QR WeChat -->
         <div class="contact-qr">
           <div class="qr-frame">
-            <img src="assets/qr_code.jpeg" alt="WeChat QR — Yi Gao Fei" class="qr-img" />
+            <img src="assets/qr_code.jpeg" alt="WeChat QR — Yi Gao Fei" class="qr-img" width="837" height="699" loading="lazy" decoding="async" />
           </div>
           <p class="qr-caption" data-i18n="contact.wechat">WeChat · 微信</p>
         </div>
@@ -197,7 +201,7 @@
   <!-- ============================= FOOTER ============================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <img src="assets/logo-transparent.png" alt="Yi Gao Fei" class="footer-logo" />
+      <img src="assets/logo-transparent.webp" alt="Yi Gao Fei" class="footer-logo" width="760" height="449" loading="lazy" decoding="async" />
       <p class="footer-copy">© <span id="year"></span> Yi Gao Fei · Italy Golf Concierge</p>
     </div>
   </footer>
@@ -220,7 +224,7 @@
     <span class="golf-gal-count" id="lightboxCount"></span>
   </div>
 
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

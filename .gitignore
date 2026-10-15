@@ -68,3 +68,6 @@ out/
 
 # jetbrains
 .idea
+
+# high quality images backup
+old-images

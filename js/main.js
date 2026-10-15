@@ -35,7 +35,7 @@
 
     // Inizializza traduzioni, POI costruisci la mappa (servono i testi tradotti)
     if (window.I18N) {
-      window.I18N.init().then(initMap);
+      window.I18N.init().then(initMap).then(warmUpGolfData);
     } else {
       initMap();
     }
@@ -288,10 +288,25 @@
     return fetch("data/golf-courses.json").then(function (r) { return r.json(); })
       .then(function (d) { golfData = d; return d; });
   }
+  // Scarica i dati dei campi in background, cosi' il primo click su una regione e' immediato
+  function warmUpGolfData() {
+    var run = function () { loadGolfData().catch(function () {}); };
+    if (window.requestIdleCallback) window.requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 1500);
+  }
   function loadRegionMap(region) {
     if (regionMaps[region]) return Promise.resolve(regionMaps[region]);
     return fetch("data/" + region + "-map.json").then(function (r) { return r.json(); })
       .then(function (d) { regionMaps[region] = d; return d; });
+  }
+
+  // Precarica le foto adiacenti a quella mostrata, cosi' lo scorrimento e' istantaneo
+  function preloadNeighbors(list, idx) {
+    if (!list || list.length < 2) return;
+    [1, -1].forEach(function (d) {
+      var src = list[(idx + d + list.length) % list.length];
+      if (src) new Image().src = src;
+    });
   }
 
   // Titolo della vista regionale (cambia per regione e lingua)
@@ -466,7 +481,9 @@
         var bg = document.getElementById("golfBg");
         if (bg) bg.src = photos[galIdx];
         count.textContent = (galIdx + 1) + " / " + photos.length;
+        preloadNeighbors(photos, galIdx);
       }
+      preloadNeighbors(photos, galIdx);
       document.getElementById("golfPrev").addEventListener("click", function () { show(galIdx - 1); });
       document.getElementById("golfNext").addEventListener("click", function () { show(galIdx + 1); });
       // swipe orizzontale su touch (sui telefoni le frecce sono nascoste)
@@ -578,6 +595,7 @@
     content.innerHTML = html;
 
     if (images.length) {
+      preloadNeighbors(images, modalIdx);
       document.getElementById("modalFull").addEventListener("click", openLightbox);
       document.getElementById("modalImg").addEventListener("click", openLightbox);
     }
@@ -606,6 +624,7 @@
     img.src = images[modalIdx];
     img.alt = img.alt.replace(/\d+$/, modalIdx + 1);
     if (count) count.textContent = (modalIdx + 1) + " / " + images.length;
+    preloadNeighbors(images, modalIdx);
     var box = document.getElementById("lightbox");
     if (box && !box.hidden) updateLightbox();
   }

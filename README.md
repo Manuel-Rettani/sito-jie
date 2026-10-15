@@ -16,8 +16,22 @@ data/zh.json        Testi in cinese
 assets/logo.jpeg    Logo Yi Gao Fei
 assets/qr_code.jpeg QR WeChat (sezione Contatti)
 assets/fonts/       Font self-hosted (.woff2) + fonts.css — nessuna dipendenza esterna
-tools/              Script di manutenzione (rigenerazione font)
+tools/              Script di manutenzione (rigenerazione font, ottimizzazione immagini)
 ```
+
+## Immagini
+
+Foto dei campi/pacchetti e logo sono in **WebP**, max 1600 px (logo 760 px).
+Gli originali in alta qualità stanno in `old-images/` (ignorata da git, stessa
+struttura di `assets/`). Per aggiungere foto: copiale in `old-images/assets/...`
+(JPG/JPEG) e lancia
+
+```bash
+bash tools/optimize-images.sh
+```
+
+poi referenzia i file `.webp` generati in `data/golf-courses.json`.
+(Richiede `cwebp`: `brew install webp`.)
 
 ## Font self-hosted (importante per la Cina)
 
